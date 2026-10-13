@@ -26,7 +26,7 @@ export default function IntegrationsPage() {
       name: 'Nx',
       category: 'Monorepo Build',
       description:
-        'The platform is built with Nx for modular, cacheable builds — making it easy to extend or white-label for enterprise customers.',
+        'The platform is built with Nx for modular, cacheable builds, making it easy to extend or white-label for enterprise customers.',
     },
     {
       name: 'ChatGPT UI',
@@ -46,7 +46,7 @@ export default function IntegrationsPage() {
     <div className="container mx-auto px-4 py-16 sm:px-8">
       <h1 className="mb-4 text-4xl font-bold text-gray-950">Integrations</h1>
       <p className="mb-12 max-w-2xl text-lg text-gray-600">
-        ZEKVIAN connects with the tools your ops team already uses — and extends
+        ZEKVIAN connects with the tools your ops team already uses, and extends
         with an MCP-compatible API for AI-native workflows.
       </p>
 

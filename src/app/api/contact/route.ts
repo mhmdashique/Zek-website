@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
     await sendEmail({
       to: TEAM_EMAIL,
       replyTo: email,
-      subject: `New Contact Form Submission — ${name}`,
+      subject: `New Contact Form Submission: ${name}`,
       html: `
         <div style="font-family:Arial,sans-serif;max-width:640px;margin:0 auto;color:#0f0f0f">
           <div style="background:#4f46e5;color:#fff;padding:24px 28px;border-radius:14px 14px 0 0">

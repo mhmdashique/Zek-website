@@ -16,7 +16,6 @@ const COLS = [
     links: [
       { href: '/about', label: 'About' },
       { href: '/customers', label: 'Customers' },
-      { href: '/contact', label: 'Contact' },
       { href: '/faq', label: 'FAQ' },
     ],
   },
@@ -108,12 +107,6 @@ export function Footer() {
             style={{ color: 'var(--mist)', opacity: 0.6 }}
           >
             © {new Date().getFullYear()} Zekvian Inc. All rights reserved.
-          </p>
-          <p
-            className="font-mono text-xs"
-            style={{ color: 'var(--mist)', opacity: 0.6 }}
-          >
-            status: <span style={{ color: 'var(--ember)' }}>operational</span>
           </p>
         </div>
       </div>

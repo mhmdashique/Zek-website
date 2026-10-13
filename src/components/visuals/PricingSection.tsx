@@ -189,9 +189,6 @@ export function PricingSection() {
           })}
         </div>
 
-        <p className="text-center text-sm mt-16" style={{ color: "var(--mist)", opacity: 0.5 }}>
-          All plans include a 14-day free trial. No credit card required.
-        </p>
       </div>
     </section>
   );

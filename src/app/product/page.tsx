@@ -5,7 +5,7 @@ const CORE = [
   },
   {
     title: "Autonomous Replacements",
-    desc: "When an item is sold out, the AI suggests matching substitutes based on brand, pricing, and category — preserving sales that would otherwise be lost.",
+    desc: "When an item is sold out, the AI suggests matching substitutes based on brand, pricing, and category, preserving sales that would otherwise be lost.",
   },
   {
     title: "Link & Invoice Checkout",
@@ -115,11 +115,11 @@ export default function ProductPage() {
         <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 32px" }}>
           <SectionLabel label="PRODUCT" />
           <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.2rem,5vw,3.5rem)", color: "var(--mist)", fontWeight: 600, lineHeight: 1.1, marginBottom: "24px", maxWidth: "700px" }}>
-            Meet ZEKVIAN AI-Chatbot —<br />
+            Meet ZEKVIAN AI-Chatbot <br />
             <span style={{ color: "var(--pulse)" }}>24/7 Smart Conversations</span>
           </h1>
           <p style={{ fontSize: "1.0625rem", color: "var(--mist)", opacity: 0.65, lineHeight: 1.75, maxWidth: "620px", marginBottom: "32px" }}>
-            ZEKVIAN connects an intelligent AI conversational agent directly to the physical store's live inventory database. Shoppers upload raw grocery lists on WhatsApp, and the bot dynamically handles item matching, substitute generation, and digital payments autonomously — reclaiming employee productivity instantly.
+            ZEKVIAN connects an intelligent AI conversational agent directly to the physical store's live inventory database. Shoppers upload raw grocery lists on WhatsApp, and the bot dynamically handles item matching, substitute generation, and digital payments autonomously, reclaiming employee productivity instantly.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
             {["WhatsApp AI", "Live Inventory", "Auto-Substitution", "Digital Checkout", "Franchise Analytics"].map(t => <Tag key={t} label={t} />)}
@@ -178,7 +178,7 @@ export default function ProductPage() {
               24/7 Smart Conversations
             </h2>
             <p style={{ fontSize: "1rem", color: "var(--mist)", opacity: 0.65, lineHeight: 1.8 }}>
-              ZEKVIAN connects an intelligent AI conversational agent directly to the physical store's live inventory database. Shoppers upload raw grocery lists on WhatsApp, and the bot dynamically handles item matching, substitute generation, and digital payments autonomously — reclaiming employee productivity instantly.
+              ZEKVIAN connects an intelligent AI conversational agent directly to the physical store's live inventory database. Shoppers upload raw grocery lists on WhatsApp, and the bot dynamically handles item matching, substitute generation, and digital payments autonomously, reclaiming employee productivity instantly.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "24px" }}>
               <Tag label="WhatsApp AI" />
@@ -245,13 +245,13 @@ export default function ProductPage() {
                 Interactive AI WhatsApp Engine
               </h2>
               <p style={{ fontSize: "0.9375rem", color: "var(--mist)", opacity: 0.55, lineHeight: 1.75 }}>
-                Beyond basic chatbots — behavioral intelligence that learns from every order and adapts in real time.
+                Beyond basic chatbots, behavioral intelligence that learns from every order and adapts in real time.
               </p>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
               {AI_ENGINE.map((item, i) => (
                 <div key={i} style={{ display: "flex", gap: "16px" }}>
-                  <span style={{ color: "var(--pulse)", flexShrink: 0, marginTop: "3px" }}>—</span>
+                  <span style={{ color: "var(--pulse)", flexShrink: 0, marginTop: "3px" }}>•</span>
                   <div>
                     <h3 style={{ fontFamily: "var(--font-display)", fontSize: "0.95rem", fontWeight: 600, color: "var(--mist)", marginBottom: "4px" }}>{item.title}</h3>
                     <p style={{ fontSize: "0.875rem", color: "var(--mist)", opacity: 0.6, lineHeight: 1.7 }}>{item.desc}</p>

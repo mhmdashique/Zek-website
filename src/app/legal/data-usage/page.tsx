@@ -26,7 +26,7 @@ const SECTIONS: Section[] = [
           "Technical data: message timestamps, session metadata, delivery attempt logs.",
         ].map((item, i) => (
           <li key={i} style={{ display: "flex", gap: "10px" }}>
-            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>—</span>
+            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>•</span>
             {item}
           </li>
         ))}
@@ -48,7 +48,7 @@ const SECTIONS: Section[] = [
           "Service analytics to improve bot accuracy and ordering flow.",
         ].map((item, i) => (
           <li key={i} style={{ display: "flex", gap: "10px" }}>
-            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>—</span>
+            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>•</span>
             {item}
           </li>
         ))}
@@ -68,7 +68,7 @@ const SECTIONS: Section[] = [
           "WhatsApp platform outages may temporarily affect message delivery; Zekvian is not liable for Meta platform downtime.",
         ].map((item, i) => (
           <li key={i} style={{ display: "flex", gap: "10px" }}>
-            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>—</span>
+            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>•</span>
             {item}
           </li>
         ))}
@@ -101,7 +101,7 @@ const SECTIONS: Section[] = [
           "No sale of personal data: we do not sell your personal information to third parties.",
         ].map((item, i) => (
           <li key={i} style={{ display: "flex", gap: "10px" }}>
-            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>—</span>
+            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>•</span>
             {item}
           </li>
         ))}
@@ -120,7 +120,7 @@ const SECTIONS: Section[] = [
           "You may request deletion of your data subject to legal and operational retention requirements.",
         ].map((item, i) => (
           <li key={i} style={{ display: "flex", gap: "10px" }}>
-            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>—</span>
+            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>•</span>
             {item}
           </li>
         ))}
@@ -151,7 +151,7 @@ const SECTIONS: Section[] = [
           "Block or restrict service access if you no longer wish to use the ordering platform.",
         ].map((item, i) => (
           <li key={i} style={{ display: "flex", gap: "10px" }}>
-            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>—</span>
+            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>•</span>
             {item}
           </li>
         ))}

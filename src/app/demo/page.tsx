@@ -2,10 +2,10 @@ import { DemoRequestForm } from '@/components/forms/DemoRequestForm';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const SANDBOX_STATS = [
-  { value: '8', label: 'Demo Shops' },
-  { value: '124', label: 'Products' },
-  { value: 'Live', label: 'Routing' },
+const CONTACT_ITEMS = [
+  { value: '<24h', label: 'Response time' },
+  { value: 'Mon to Sat', label: 'Support' },
+  { value: 'Live', label: 'Demo call' },
 ];
 
 export default function DemoPage() {
@@ -58,53 +58,70 @@ export default function DemoPage() {
               fontSize: 'var(--text-17)',
             }}
           >
-            Explore an interactive sandbox with pre-seeded shops, products, and
-            orders — or request a tailored live demo.
+  Explore ZEKVIAN with a tailored walkthrough, or reach us
+  directly below.
           </p>
         </div>
       </section>
 
       <div className="container mx-auto max-w-6xl px-4 py-20 sm:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-          {/* Sandbox panel */}
+  {/* Contact panel */}
           <div>
             <h2
               className="font-display mb-6 text-2xl"
               style={{ color: 'var(--mist)' }}
             >
-              Interactive Sandbox
+  Contact details
             </h2>
             <div
-              className="mb-6 flex aspect-video w-full items-center justify-center rounded-2xl"
+  className="mb-6 w-full rounded-2xl p-8"
               style={{
                 background: 'var(--paper)',
                 border: '1px solid var(--line)',
                 boxShadow: 'var(--card-shadow)',
               }}
             >
-              <div className="px-6 text-center">
+  <div className="text-center">
                 <div
-                  className="mb-3 font-mono text-xs"
-                  style={{ color: 'var(--pulse)' }}
+  className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full text-xl"
+  style={{
+  background: 'var(--badge-bg)',
+  border: '1px solid #c7d2fe',
+  }}
+  aria-hidden="true"
                 >
-                  ● coming soon
+  ✉
                 </div>
+  <div
+  className="mb-2 font-mono text-xs"
+  style={{ color: 'var(--pulse)', letterSpacing: '0.08em' }}
+  >
+  EMAIL US AT
+  </div>
+  <a
+  href="mailto:official.zekvian@gmail.com"
+  className="font-display text-lg break-all"
+  style={{ color: 'var(--mist)', textDecoration: 'underline', textUnderlineOffset: '4px' }}
+  >
+  official.zekvian@gmail.com
+  </a>
                 <p
-                  className="text-sm"
+  className="mx-auto mt-3 max-w-xs text-sm"
                   style={{
                     color: 'var(--mist)',
-                    opacity: 0.78,
+  opacity: 0.72,
                     lineHeight: 1.6,
                   }}
                 >
-                  A pre-seeded tenant with shops, products, and live routing
-                  will appear here.
+  For demos, pricing, and support, we reply within one
+  business day.
                 </p>
               </div>
             </div>
 
             <div className="mb-6 grid grid-cols-3 gap-3">
-              {SANDBOX_STATS.map((s) => (
+  {CONTACT_ITEMS.map((s) => (
                 <div
                   key={s.label}
                   className="rounded-xl py-4 text-center"
@@ -133,8 +150,8 @@ export default function DemoPage() {
               className="text-sm"
               style={{ color: 'var(--mist)', opacity: 0.72, lineHeight: 1.6 }}
             >
-              The sandbox is isolated — your actions won't affect real data.
-              State resets on reload.
+  Write to us anytime, your message goes straight to the
+  ZEKVIAN team.
             </p>
           </div>
 

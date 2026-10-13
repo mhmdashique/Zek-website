@@ -235,12 +235,6 @@ export default function PricingPage() {
           })}
         </div>
 
-        <p
-          className="mt-16 text-center text-sm"
-          style={{ color: '#4b5563', opacity: 0.8 }}
-        >
-          All plans include a 14-day free trial. No credit card required.
-        </p>
       </div>
     </div>
   );

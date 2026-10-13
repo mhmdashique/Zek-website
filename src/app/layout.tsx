@@ -3,7 +3,6 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
-import { LoadingScreen } from '@/components/layout/LoadingScreen';
 
 const siteFont = Poppins({
   subsets: ['latin'],
@@ -43,9 +42,8 @@ export default function RootLayout({
           fontFamily: 'var(--font-site)',
         }}
       >
-        <LoadingScreen />
         <Navbar />
-        <main className="flex-1" style={{ paddingTop: '76px' }}>
+  <main className="flex-1" style={{ paddingTop: '100px' }}>
           {children}
         </main>
         <Footer />

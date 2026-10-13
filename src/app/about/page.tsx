@@ -44,16 +44,18 @@ export default function AboutPage() {
           <h1
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2.2rem,5vw,3.5rem)',
+  fontSize: 'clamp(2.4rem,5vw,3.75rem)',
               color: 'var(--mist)',
-              fontWeight: 600,
-              lineHeight: 1.1,
+  fontWeight: 800,
+  lineHeight: 1.05,
+  letterSpacing: '-0.03em',
               marginBottom: '28px',
-              maxWidth: '680px',
+  maxWidth: '720px',
             }}
           >
-            Independent supermarkets deserve the same digital power as
-            billion-dollar platforms.
+  Independent stores.
+  <br />
+  Same digital power.
           </h1>
           <p
             style={{
@@ -64,9 +66,7 @@ export default function AboutPage() {
               maxWidth: '620px',
             }}
           >
-            Zekvian was founded by four vision-driven retail tech innovators
-            united by a single conviction — and they shouldn't need a
-            billion-dollar budget to get it.
+  Four builders. One belief. Local stores deserve big tech.
           </p>
         </div>
       </section>
@@ -75,18 +75,15 @@ export default function AboutPage() {
       <section
         style={{ borderBottom: '1px solid var(--line)', padding: '72px 0' }}
       >
+  <style>{`
+  .story-point { transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0,0.2,1), border-color 0.25s cubic-bezier(0.4,0,0.2,1); }
+  .story-point:hover { transform: translateY(-4px); border-color: rgba(79,70,229,0.5) !important; box-shadow: 0 18px 44px rgba(79,70,229,0.18) !important; }
+  `}</style>
         <div
           style={{ maxWidth: '1152px', margin: '0 auto', padding: '0 32px' }}
         >
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '64px',
-              alignItems: 'start',
-            }}
-          >
-            <div>
+  <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
+  <div className="lg:sticky lg:top-28">
               <p
                 style={{
                   fontFamily: 'var(--font-mono)',
@@ -113,31 +110,138 @@ export default function AboutPage() {
                 style={{
                   fontSize: '0.9375rem',
                   color: 'var(--mist)',
-                  opacity: 0.65,
+  opacity: 0.85,
                   lineHeight: 1.8,
                 }}
               >
-                We're not building another delivery app or marketplace that
-                competes with local stores. We're building the infrastructure
-                that turns a store's existing messaging channel into a live,
-                transactional database.
+  No marketplace. No middleman. Your chat is your store.
+  Live inventory. Real checkout.
               </p>
             </div>
+  <div style={{ position: 'relative', paddingLeft: '4px' }}>
+  {/* timeline rail */}
             <div
-              style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
+  aria-hidden
+  style={{
+  position: 'absolute',
+  left: '27px',
+  top: '28px',
+  bottom: '28px',
+  width: '2px',
+  background:
+  'linear-gradient(180deg, #4f46e5, #a5b4fc 55%, rgba(79,70,229,0.12))',
+  borderRadius: '2px',
+  }}
+  />
+  {[
+  {
+  t: 'Higher margins',
+  d: 'Increase operational margins by digitizing manual order-taking',
+  },
+  {
+  t: 'Zero bottlenecks',
+  d: 'Eliminate employee administrative bottlenecks created by phone and in-person order management',
+  },
+  {
+  t: 'Loyal customers',
+  d: 'Strengthen customer retention by meeting shoppers where they already are, in their chat inbox',
+  },
+  ].map((item, i) => (
+  <div
+  key={i}
+  style={{
+  position: 'relative',
+  display: 'flex',
+  gap: '18px',
+  alignItems: 'flex-start',
+  marginBottom: i === 2 ? 0 : '20px',
+  }}
             >
-              {[
-                'Increase operational margins by digitizing manual order-taking',
-                'Eliminate employee administrative bottlenecks created by phone and in-person order management',
-                'Strengthen customer retention by meeting shoppers where they already are — in their chat inbox',
-              ].map((item, i) => (
-                <div key={i} className="feature-card">
-                  <div className="feature-index">
+  {/* node */}
+  <span
+  style={{
+  position: 'relative',
+  zIndex: 1,
+  flexShrink: 0,
+  width: '48px',
+  height: '48px',
+  borderRadius: '50%',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontFamily: 'var(--font-mono)',
+  fontSize: '0.78rem',
+  fontWeight: 800,
+  color: '#fff',
+  background:
+  'linear-gradient(135deg, #4f46e5, #7c3aed)',
+  border: '4px solid var(--void)',
+  boxShadow:
+  '0 0 0 1px rgba(79,70,229,0.35), 0 8px 20px rgba(79,70,229,0.35)',
+  }}
+  >
                     {String(i + 1).padStart(2, '0')}
+  </span>
+  {/* card */}
+  <div
+  className="story-point"
+  style={{
+  flex: 1,
+  position: 'relative',
+  overflow: 'hidden',
+  background:
+  i === 0
+  ? 'linear-gradient(160deg, rgba(79,70,229,0.08), var(--paper) 55%)'
+  : 'var(--paper)',
+  border:
+  i === 0
+  ? '1.5px solid rgba(79,70,229,0.55)'
+  : '1px solid var(--line)',
+  borderRadius: '20px',
+  padding: '24px 24px 26px',
+  boxShadow:
+  i === 0
+  ? '0 16px 40px rgba(79,70,229,0.16)'
+  : 'var(--card-shadow)',
+  }}
+  >
+  <div
+  aria-hidden
+  style={{
+  position: 'absolute',
+  top: '-46px',
+  right: '-46px',
+  width: '130px',
+  height: '130px',
+  borderRadius: '50%',
+  background:
+  'radial-gradient(circle, rgba(79,70,229,0.16), transparent 70%)',
+  pointerEvents: 'none',
+  }}
+  />
+  <div
+  style={{
+  fontFamily: 'var(--font-display)',
+  fontWeight: 700,
+  fontSize: '1rem',
+  color: 'var(--mist)',
+  marginBottom: '8px',
+  letterSpacing: '-0.01em',
+  }}
+  >
+  {item.t}
                   </div>
-                  <p className="feature-desc" style={{ opacity: 0.75 }}>
-                    {item}
+  <p
+  style={{
+  fontSize: '0.875rem',
+  color: 'var(--mist)',
+  opacity: 0.7,
+  lineHeight: 1.7,
+  }}
+  >
+  {item.d}
                   </p>
+  </div>
                 </div>
               ))}
             </div>
@@ -181,9 +285,9 @@ export default function AboutPage() {
                   lineHeight: 1.6,
                 }}
               >
-                To transform traditional, manually-run supermarkets into
-                technologically superior retail ecosystems — dramatically
-                accelerating staff productivity, inventory accuracy, and
+  To transform traditional, manually-run businesses into
+  technologically superior operations, dramatically
+  accelerating staff productivity, order accuracy, and
                 customer retention.
               </p>
             </div>
@@ -211,8 +315,8 @@ export default function AboutPage() {
                 }}
               >
                 To democratize dynamic, conversational commerce for local
-                brick-and-mortar stores everywhere — so that fast, frictionless,
-                everyday grocery buying is simple and accessible to anyone,
+  businesses everywhere, so that fast, frictionless,
+  everyday buying is simple and accessible to anyone,
                 anywhere.
               </p>
             </div>
@@ -220,7 +324,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Why Zekvian — comparison table */}
+      {/* Why Zekvian, comparison table */}
       <section
         style={{ borderBottom: '1px solid var(--line)', padding: '72px 0' }}
       >
@@ -275,7 +379,7 @@ export default function AboutPage() {
                     fontFamily: 'var(--font-mono)',
                     fontSize: '0.75rem',
                     color: 'var(--mist)',
-                    opacity: 0.4,
+  opacity: 0.65,
                     letterSpacing: '0.06em',
                   }}
                 >
@@ -311,12 +415,12 @@ export default function AboutPage() {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '12px',
-                    background: 'rgba(255, 90, 90, 0.04)',
+  background: '#fef2f2',
                   }}
                 >
                   <span
                     style={{
-                      color: '#ff6b6b',
+  color: '#dc2626',
                       flexShrink: 0,
                       fontSize: '1.15rem',
                       fontWeight: 700,
@@ -327,7 +431,7 @@ export default function AboutPage() {
                   <p
                     style={{
                       fontSize: '0.9rem',
-                      color: 'rgba(255, 214, 214, 0.9)',
+  color: '#7f1d1d',
                       opacity: 1,
                       lineHeight: 1.6,
                     }}
@@ -411,3 +515,5 @@ export default function AboutPage() {
     </div>
   );
 }
+
+

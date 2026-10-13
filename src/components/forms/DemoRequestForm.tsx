@@ -162,9 +162,9 @@ export function DemoRequestForm() {
             onBlur={(e) => (e.target.style.borderColor = 'var(--line)')}
           >
             <option value="">No preference</option>
-            <option value="Morning (9am–12pm)">Morning (9am–12pm)</option>
-            <option value="Afternoon (12pm–4pm)">Afternoon (12pm–4pm)</option>
-            <option value="Evening (4pm–7pm)">Evening (4pm–7pm)</option>
+            <option value="Morning (9am to 12pm)">Morning (9am to 12pm)</option>
+            <option value="Afternoon (12pm to 4pm)">Afternoon (12pm to 4pm)</option>
+            <option value="Evening (4pm to 7pm)">Evening (4pm to 7pm)</option>
           </select>
         </Field>
 

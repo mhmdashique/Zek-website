@@ -2,17 +2,17 @@ const SOLUTIONS = [
   {
     n: '01',
     title: 'AI WhatsApp Ordering Chatbot',
-    desc: 'Customers send a raw or photographed grocery list to WhatsApp. The bot parses unstructured text/images, matches items against live store inventory, and updates quantities in real time — no manual clerk involvement needed.',
+    desc: 'Customers send a raw or photographed grocery list to WhatsApp. The bot parses unstructured text/images, matches items against live store inventory, and updates quantities in real time, no manual clerk involvement needed.',
   },
   {
     n: '02',
     title: 'Autonomous Substitution Engine',
-    desc: 'When an item is out of stock, the AI immediately proposes alternatives based on brand, price, and category — preventing lost sales from stockouts.',
+    desc: 'When an item is out of stock, the AI immediately proposes alternatives based on brand, price, and category, preventing lost sales from stockouts.',
   },
   {
     n: '03',
     title: 'In-Chat Checkout',
-    desc: 'Dynamic pricing totals, last-minute list edits, digital invoicing, and secure payment links are all handled inside the WhatsApp conversation — no app switch required.',
+    desc: 'Dynamic pricing totals, last-minute list edits, digital invoicing, and secure payment links are all handled inside the WhatsApp conversation, no app switch required.',
   },
   {
     n: '04',
@@ -37,7 +37,7 @@ const SOLUTIONS = [
 ];
 
 const PAIN_POINTS = [
-  ['10–25 min manual stock checks', 'Sub-1-second inventory lookup'],
+  ['10 to 25 min manual stock checks', 'Sub-1-second inventory lookup'],
   ['Lost sales on out-of-stock items', 'Instant AI-suggested substitutes'],
   ['Manual re-order hassle', '1-click re-order of past lists'],
   ['No delivery visibility', 'Live tracking pushed via WhatsApp'],
@@ -57,12 +57,12 @@ const NET_EFFECTS = [
   },
   {
     value: 'Near zero',
-    label: 'in-store queue time — faster checkout and pickup',
+    label: 'in-store queue time, faster checkout and pickup',
   },
   {
     value: 'Day 1',
     label:
-      'franchise-ready — one owner account scales across unlimited branches',
+      'franchise-ready, one owner account scales across unlimited branches',
   },
 ];
 
@@ -101,7 +101,7 @@ export default function SolutionsPage() {
               maxWidth: '680px',
             }}
           >
-            What Zekvian does — available now
+            What Zekvian does, available now
           </h1>
           <p
             style={{

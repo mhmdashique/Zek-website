@@ -7,17 +7,13 @@ const TESTIMONIALS = [
     name: 'Ravi Menon',
     title: 'Head of Operations',
     // company: "FreshRun Retail",
-    // stat: "50ms",
-    statLabel: 'allocation time',
   },
   {
     quote:
-      "We run 38 dark stores across three cities. Before ZEKVIAN, routing was a spreadsheet nightmare. Now it's invisible — it just works.",
+      "We run 38 dark stores across three cities. Before ZEKVIAN, routing was a spreadsheet nightmare. Now it's invisible, it just works.",
     name: 'Aisha Balogun',
     title: 'COO',
     // company: "QuickDark Co.",
-    // stat: "38",
-    statLabel: 'stores automated',
   },
   {
     quote:
@@ -25,17 +21,13 @@ const TESTIMONIALS = [
     name: 'Tomás Herrera',
     title: 'CTO',
     // company: "LocalRunner",
-    // stat: "1 day",
-    statLabel: 'integration time',
   },
   {
     quote:
-      'Onboarding was under two weeks. The RBAC system meant each franchise owner only sees their own data — exactly what we needed for compliance.',
+      'Onboarding was under two weeks. The RBAC system meant each franchise owner only sees their own data, exactly what we needed for compliance.',
     name: 'Mei-Lin Chou',
     title: 'VP Technology',
     // company: "Metro Fresh Group",
-    // stat: "< 2wk",
-    statLabel: 'onboarding',
   },
   {
     quote:
@@ -43,8 +35,6 @@ const TESTIMONIALS = [
     name: 'Dmitri Volkov',
     title: 'Director of Logistics',
     // company: "UrbanBasket",
-    // stat: "800/hr",
-    statLabel: 'peak orders',
   },
   {
     quote:
@@ -52,8 +42,6 @@ const TESTIMONIALS = [
     name: 'Fatima Al-Rashid',
     title: 'Engineering Lead',
     // company: "Souk Express",
-    // stat: "9 days",
-    statLabel: 'migration time',
   },
   {
     quote:
@@ -61,17 +49,13 @@ const TESTIMONIALS = [
     name: 'Lena Hoffmann',
     title: 'Operations Manager',
     // company: "Stadtmarkt GmbH",
-    // stat: "~0",
-    statLabel: 'stock discrepancies',
   },
   {
     quote:
-      'The audit log alone justified the switch. Every allocation, every override, every role change — fully traceable. Our compliance team loves it.',
+      'The audit log alone justified the switch. Every allocation, every override, every role change, fully traceable. Our compliance team loves it.',
     name: 'James Okafor',
     title: 'Head of Compliance',
     // company: "PrimePath Retail",
-    // stat: "100%",
-    statLabel: 'audit coverage',
   },
 ];
 
@@ -117,38 +101,6 @@ function Card({ t }: { t: (typeof TESTIMONIALS)[0] }) {
       >
         "{t.quote}"
       </p>
-
-      <div
-        style={{
-          display: 'inline-flex',
-          alignItems: 'baseline',
-          gap: '6px',
-          padding: '4px 10px',
-          borderRadius: '6px',
-          alignSelf: 'flex-start',
-          background: 'rgba(255,176,32,0.07)',
-          border: '1px solid rgba(255,176,32,0.15)',
-        }}
-      >
-        <span
-          style={{
-            fontFamily: 'var(--font-display)',
-            color: 'var(--ember)',
-            fontSize: '0.95rem',
-            fontWeight: 600,
-          }}
-        ></span>
-        <span
-          style={{
-            fontFamily: 'var(--font-mono)',
-            color: 'var(--ember)',
-            opacity: 0.65,
-            fontSize: '0.68rem',
-          }}
-        >
-          {t.statLabel}
-        </span>
-      </div>
 
       <div
         style={{
@@ -292,7 +244,7 @@ export function Testimonials() {
               lineHeight: 1.6,
             }}
           >
-            From dark stores to franchise chains — teams running on ZEKVIAN.
+            From dark stores to franchise chains, teams running on ZEKVIAN.
           </p>
         </div>
       </div>

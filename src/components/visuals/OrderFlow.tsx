@@ -2,7 +2,7 @@
 import { useEffect, useRef, useCallback } from "react";
 
 interface Props {
-  /** 0–1 scroll-scrubbed progress. Omit for hero auto-play mode. */
+  /** 0 to 1 scroll-scrubbed progress. Omit for hero auto-play mode. */
   progress?: number;
   className?: string;
 }
@@ -45,7 +45,7 @@ function renderFrame(
   dotsLayer.innerHTML = "";
   resolvedLayer.innerHTML = "";
 
-  // Fade shop nodes in during scroll phase 0–0.33
+  // Fade shop nodes in during scroll phase 0 to 0.33
   if (scrollP !== undefined) {
     const alpha = Math.min(scrollP / 0.33, 1);
     SHOPS.forEach((_, i) => {

@@ -26,7 +26,7 @@ const SECTIONS: Section[] = [
           "Preference data: delivery or pickup preferences, promotional opt-in/opt-out status.",
         ].map((item, i) => (
           <li key={i} style={{ display: "flex", gap: "10px" }}>
-            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>—</span>
+            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>•</span>
             {item}
           </li>
         ))}
@@ -47,7 +47,7 @@ const SECTIONS: Section[] = [
           "Improve service quality and ordering experience.",
         ].map((item, i) => (
           <li key={i} style={{ display: "flex", gap: "10px" }}>
-            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>—</span>
+            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>•</span>
             {item}
           </li>
         ))}
@@ -66,7 +66,7 @@ const SECTIONS: Section[] = [
           "Legal obligation: compliance with applicable Indian laws and regulations.",
         ].map((item, i) => (
           <li key={i} style={{ display: "flex", gap: "10px" }}>
-            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>—</span>
+            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>•</span>
             {item}
           </li>
         ))}
@@ -86,7 +86,7 @@ const SECTIONS: Section[] = [
           "When required by law, court order, or government authority.",
         ].map((item, i) => (
           <li key={i} style={{ display: "flex", gap: "10px" }}>
-            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>—</span>
+            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>•</span>
             {item}
           </li>
         ))}
@@ -130,7 +130,7 @@ const SECTIONS: Section[] = [
           "Grievance: lodge a complaint with the merchant or Zekvian support team.",
         ].map((item, i) => (
           <li key={i} style={{ display: "flex", gap: "10px" }}>
-            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>—</span>
+            <span style={{ color: "var(--pulse)", flexShrink: 0 }}>•</span>
             {item}
           </li>
         ))}

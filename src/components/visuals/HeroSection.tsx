@@ -3,67 +3,6 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { PhoneShowcase } from '@/components/visuals/PhoneShowcase';
 
-const STATS = [
-  { end: 42, suffix: 'ms', label: 'Avg allocation time' },
-  { end: 3204, suffix: '', label: 'Orders / day' },
-  { end: 99.4, suffix: '%', label: 'On-time fulfillment' },
-];
-
-function useCountUp(target: number, duration = 1200, start = false) {
-  const [val, setVal] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const startTime = performance.now();
-    const isFloat = target % 1 !== 0;
-    const raf = (now: number) => {
-      const p = Math.min((now - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      setVal(
-        isFloat
-          ? Math.round(target * eased * 10) / 10
-          : Math.round(target * eased)
-      );
-      if (p < 1) requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
-  }, [start, target, duration]);
-  return val;
-}
-
-function StatItem({
-  end,
-  suffix,
-  label,
-  active,
-}: {
-  end: number;
-  suffix: string;
-  label: string;
-  active: boolean;
-}) {
-  const val = useCountUp(end, 1200, active);
-  return (
-    <div
-      className="count-appear"
-      style={{ animationDelay: '1.8s', animationFillMode: 'both' }}
-    >
-      <div
-        className="font-mono text-2xl md:text-3xl"
-        style={{ color: 'var(--pulse)' }}
-      >
-        {val}
-        {suffix}
-      </div>
-      <div
-        className="mt-1 text-xs"
-        style={{ color: 'var(--mist)', opacity: 0.6 }}
-      >
-        {label}
-      </div>
-    </div>
-  );
-}
-
 const LINES = ['Powering the future with', 'ZEKVIAN'];
 
 export function HeroSection() {
@@ -113,7 +52,7 @@ export function HeroSection() {
               Introduce AI Powered Integrations for Automations
             </div>
 
-            {/* Headline — masked line reveal */}
+            {/* Headline, masked line reveal */}
             <h1
               className="font-display mb-8"
               style={{
@@ -153,7 +92,7 @@ export function HeroSection() {
               innovation.
             </p>
 
-            {/* CTAs — appear after headline settles */}
+            {/* CTAs, appear after headline settles */}
             <div
               className="flex flex-col gap-3 sm:flex-row lg:justify-start"
               style={{
@@ -178,16 +117,6 @@ export function HeroSection() {
               >
                 Request Demo
               </Link>
-            </div>
-
-            {/* Stats */}
-            <div
-              className="mt-12 flex justify-center gap-10 pt-8 lg:justify-start"
-              style={{ borderTop: '1px solid var(--line)' }}
-            >
-              {STATS.map((s) => (
-                <StatItem key={s.label} {...s} active={started} />
-              ))}
             </div>
           </div>
 

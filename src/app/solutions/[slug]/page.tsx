@@ -29,7 +29,7 @@ const solutions: Record<
     problem:
       'Dark store networks require precise, real-time inventory visibility and instant order assignment to meet sub-30-minute delivery SLAs.',
     solution:
-      "ZEKVIAN's real-time inventory sync and allocation engine ensure that each order goes to the closest dark store with verified stock — automatically.",
+      "ZEKVIAN's real-time inventory sync and allocation engine ensure that each order goes to the closest dark store with verified stock, automatically.",
     stat: '99.4%',
     statLabel: 'On-time fulfillment rate',
     quote:

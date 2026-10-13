@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 const FAQS = [
   {
     q: 'How many shops can one tenant manage?',
-    a: 'On the Starter plan, up to 10 shops. Growth allows 50, and Enterprise has no hard limits — we work with customers running 500+ locations.',
+    a: 'On the Starter plan, up to 10 shops. Growth allows 50, and Enterprise has no hard limits, we work with customers running 500+ locations.',
   },
   {
     q: 'How accurate is the haversine-based routing?',
@@ -12,11 +12,11 @@ const FAQS = [
   },
   {
     q: 'How long does onboarding take?',
-    a: 'Most customers are live within 1–2 weeks. We provide data migration support, an onboarding checklist, and dedicated setup calls for Growth and Enterprise plans.',
+    a: 'Most customers are live within 1 to 2 weeks. We provide data migration support, an onboarding checklist, and dedicated setup calls for Growth and Enterprise plans.',
   },
   {
     q: 'Do I need N8n experience to use automation features?',
-    a: 'No. We ship pre-built workflow templates for common scenarios — order notifications, low-stock alerts, fulfillment reporting. Advanced teams can customise or build from scratch.',
+    a: 'No. We ship pre-built workflow templates for common scenarios, order notifications, low-stock alerts, fulfillment reporting. Advanced teams can customise or build from scratch.',
   },
   {
     q: 'Can I export my data if I leave?',
@@ -24,7 +24,7 @@ const FAQS = [
   },
   {
     q: 'What is the MCP-compatible API?',
-    a: 'Our API follows the Model Context Protocol specification, enabling AI agents to interact with your ZEKVIAN tenant natively — querying orders, inventory, and running allocation logic programmatically.',
+    a: 'Our API follows the Model Context Protocol specification, enabling AI agents to interact with your ZEKVIAN tenant natively, querying orders, inventory, and running allocation logic programmatically.',
   },
   {
     q: 'How does pricing work if I add shops mid-month?',
@@ -40,7 +40,7 @@ const FAQS = [
   },
   {
     q: 'What security certifications does ZEKVIAN hold?',
-    a: "We implement encryption at rest and in transit, role-based access control, and detailed audit logging. SOC 2 audit is in progress — we'll update this page when it's available.",
+    a: "We implement encryption at rest and in transit, role-based access control, and detailed audit logging. SOC 2 audit is in progress, we'll update this page when it's available.",
   },
 ];
 

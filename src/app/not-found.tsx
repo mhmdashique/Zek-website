@@ -9,11 +9,9 @@ export default function NotFound() {
       <p className="mb-8 max-w-md text-gray-600">
         The page you're looking for doesn't exist or has been moved.
       </p>
-      <Link href="/">
-        <Button className="bg-indigo-600 hover:bg-indigo-700">
-          Back to Home
+  <Button asChild className="bg-indigo-600 hover:bg-indigo-700">
+  <Link href="/">Back to Home</Link>
         </Button>
-      </Link>
     </div>
   );
 }

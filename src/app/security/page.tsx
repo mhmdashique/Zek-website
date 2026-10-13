@@ -1,9 +1,9 @@
 const PILLARS = [
   { icon: "●", label: "All systems monitored 24/7" },
-  { icon: "⬡", label: "Encrypted everywhere — TLS in transit, encryption at rest." },
-  { icon: "◈", label: "Role-based access — personal data reachable only on a need-to-know basis." },
-  { icon: "◻", label: "Reputable infrastructure — hosted with cloud providers that run their own hardened stack." },
-  { icon: "○", label: "No data sale, no ad tracking — we don't sell personal data or use it for third-party ads." },
+  { icon: "⬡", label: "Encrypted everywhere, TLS in transit, encryption at rest." },
+  { icon: "◈", label: "Role-based access, personal data reachable only on a need-to-know basis." },
+  { icon: "◻", label: "Reputable infrastructure, hosted with cloud providers that run their own hardened stack." },
+  { icon: "○", label: "No data sale, no ad tracking, we don't sell personal data or use it for third-party ads." },
 ];
 
 const SECTIONS = [
@@ -17,7 +17,7 @@ const SECTIONS = [
     title: "Encryption",
     items: [
       "Data in transit between your device, our dashboard, our APIs and our service providers is encrypted using HTTPS/TLS.",
-      "Data at rest — account details, order data, message metadata — is stored using encrypted storage.",
+      "Data at rest, account details, order data, message metadata, is stored using encrypted storage.",
       "We do not store full card numbers. Payment reconciliation relies on references from our payment partners rather than raw card data.",
     ],
   },
@@ -42,7 +42,7 @@ const SECTIONS = [
   {
     n: "05",
     title: "WhatsApp & Meta data flow",
-    content: "Messaging features run on the WhatsApp Business API. Message content and related metadata are transmitted through and processed by Meta Platforms, Inc. in accordance with Meta's and WhatsApp's own security and privacy practices — this sits alongside, not in place of, the controls described on this page for data that lives in Zekvian's own systems.",
+    content: "Messaging features run on the WhatsApp Business API. Message content and related metadata are transmitted through and processed by Meta Platforms, Inc. in accordance with Meta's and WhatsApp's own security and privacy practices, this sits alongside, not in place of, the controls described on this page for data that lives in Zekvian's own systems.",
   },
   {
     n: "06",
@@ -57,7 +57,7 @@ const SECTIONS = [
   {
     n: "08",
     title: "Compliance",
-    content: "Our data handling practices are built around the Digital Personal Data Protection Act, 2023 and the Information Technology Act, 2000. Full detail on what we collect, why, and for how long is set out in our Privacy Policy.\n\nLooking for a specific compliance document, security questionnaire, or a signed DPA for your organisation? Our team can provide these on request — see the contact details below.",
+    content: "Our data handling practices are built around the Digital Personal Data Protection Act, 2023 and the Information Technology Act, 2000. Full detail on what we collect, why, and for how long is set out in our Privacy Policy.\n\nLooking for a specific compliance document, security questionnaire, or a signed DPA for your organisation? Our team can provide these on request, see the contact details below.",
   },
   {
     n: "09",
@@ -84,7 +84,7 @@ export default function SecurityPage() {
             Security at Zekvian
           </h1>
           <p style={{ fontSize: "1rem", color: "var(--mist)", opacity: 0.6, lineHeight: 1.75, maxWidth: "560px" }}>
-            We trace requests across other people's systems for a living, so protecting the data that moves through ours isn't a checkbox — it's built into how the platform runs, end to end.
+            We trace requests across other people's systems for a living, so protecting the data that moves through ours isn't a checkbox, it's built into how the platform runs, end to end.
           </p>
         </div>
       </div>
@@ -128,7 +128,7 @@ export default function SecurityPage() {
                   <ul style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                     {s.items.map((item, i) => (
                       <li key={i} style={{ display: "flex", gap: "12px", fontSize: "0.9375rem", color: "var(--mist)", opacity: 0.65, lineHeight: 1.75 }}>
-                        <span style={{ color: "var(--pulse)", flexShrink: 0 }}>—</span>{item}
+                        <span style={{ color: "var(--pulse)", flexShrink: 0 }}>•</span>{item}
                       </li>
                     ))}
                   </ul>
@@ -153,7 +153,7 @@ export default function SecurityPage() {
           </div>
         ))}
 
-        {/* Section 10 — Contact */}
+        {/* Section 10, Contact */}
         <div style={{ padding: "44px 0" }}>
           <div style={{ display: "flex", gap: "24px", alignItems: "flex-start" }}>
             <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "var(--pulse)", opacity: 0.5, flexShrink: 0, paddingTop: "5px", minWidth: "28px" }}>10</span>

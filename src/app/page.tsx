@@ -4,6 +4,7 @@ import { TeamSection } from '@/components/visuals/TeamSection';
 import { FAQSection } from '@/components/visuals/FAQSection';
 import { PricingSection } from '@/components/visuals/PricingSection';
 import { Testimonials } from '@/components/visuals/Testimonials';
+import { PartnersSection } from '@/components/visuals/PartnersSection';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
@@ -76,7 +77,7 @@ export default function Home() {
       <HeroSection />
       <HowItWorks />
 
-      <section
+  {/* <section
         id="demo-video"
         style={{
           background: 'var(--void)',
@@ -238,7 +239,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+  </section> */}
 
       {/* Product */}
       <section
@@ -287,11 +288,9 @@ export default function Home() {
           </div>
 
           <div className="mt-10">
-            <Link href="/product">
-              <Button className="bg-[var(--pulse)] text-[var(--void)] hover:opacity-90">
-                Explore full product →
+  <Button asChild className="bg-[var(--pulse)] text-[var(--void)] hover:opacity-90">
+  <Link href="/product">Explore full product →</Link>
               </Button>
-            </Link>
           </div>
         </div>
       </section>
@@ -321,17 +320,15 @@ export default function Home() {
                 What this solves immediately
               </h2>
             </div>
-            <Link href="/solutions">
-              <Button className="bg-[var(--pulse)] text-[var(--void)] hover:opacity-90">
-                View all solutions →
+  <Button asChild className="bg-[var(--pulse)] text-[var(--void)] hover:opacity-90">
+  <Link href="/solutions">View all solutions →</Link>
               </Button>
-            </Link>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 title: 'Sub-1s inventory lookup',
-                desc: 'Replaces 10–25 min manual stock checks with a real-time POS query.',
+                desc: 'Replaces 10 to 25 min manual stock checks with a real-time POS query.',
                 accent: 'var(--pulse)',
               },
               {
@@ -346,7 +343,7 @@ export default function Home() {
               },
               {
                 title: 'Live WhatsApp tracking',
-                desc: 'Delivery visibility pushed directly to the customer — no app needed.',
+                desc: 'Delivery visibility pushed directly to the customer, no app needed.',
                 accent: 'var(--ember)',
               },
               {
@@ -356,7 +353,7 @@ export default function Home() {
               },
               {
                 title: 'Multi-branch reporting',
-                desc: 'Franchise-ready from day one — one account scales across all stores.',
+                desc: 'Franchise-ready from day one, one account scales across all stores.',
                 accent: 'var(--ember)',
               },
             ].map((item, i) => (
@@ -372,7 +369,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About snippet — redesigned dark section */}
+      {/* About snippet, redesigned dark section */}
       <section
         id="about"
         className="w-full py-24"
@@ -389,19 +386,21 @@ export default function Home() {
                 className="section-kicker mb-4 font-mono text-xs"
                 style={{ color: 'var(--pulse)', letterSpacing: '0.1em' }}
               >
-                ABOUT ZEKVIAN
+  WHO WE ARE
               </p>
               <h2
                 className="section-heading font-display mb-6"
                 style={{
-                  fontSize: 'clamp(2rem,4vw,2.75rem)',
+  fontSize: 'clamp(2.4rem,5vw,3.75rem)',
                   color: 'var(--mist)',
-                  fontWeight: 600,
-                  lineHeight: 1.15,
+  fontWeight: 800,
+  lineHeight: 1.05,
+  letterSpacing: '-0.03em',
                 }}
               >
-                Independent supermarkets deserve the same digital power as
-                billion-dollar platforms.
+  Independent stores.
+  <br />
+  Same digital power.
               </h2>
               <p
                 className="section-subheading mb-10"
@@ -412,17 +411,14 @@ export default function Home() {
                   fontSize: 'var(--text-17)',
                 }}
               >
-                We're not building another delivery app. We're building the
-                infrastructure that turns a store's existing messaging channel
-                into a live, transactional database.
+  Not another delivery app. Your WhatsApp is your store.
+  Live stock. Instant checkout.
               </p>
-              <Link href="/about">
-                <Button className="bg-[var(--pulse)] text-[var(--void)] hover:opacity-90">
-                  Our story →
+  <Button asChild className="bg-[var(--pulse)] text-[var(--void)] hover:opacity-90">
+  <Link href="/about">Our story →</Link>
                 </Button>
-              </Link>
             </div>
-            {/* Right — stat grid */}
+            {/* Right, stat grid */}
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {[
                 {
@@ -431,7 +427,7 @@ export default function Home() {
                 },
                 {
                   value: 'Day 1',
-                  label: 'franchise-ready — scales across unlimited branches',
+                  label: 'franchise-ready, scales across unlimited branches',
                 },
                 {
                   value: 'Near 0',
@@ -451,9 +447,55 @@ export default function Home() {
               ))}
             </div>
           </div>
+  {/* Our story points, 01/02/03 */}
+  <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-3">
+  {[
+  {
+  title: 'Higher operational margins',
+  desc: 'Increase operational margins by digitizing manual order-taking.',
+  icon: svg(<><path d="M3 17l6-6 4 4 8-8" /><path d="M15 7h6v6" /></>),
+  },
+  {
+  title: 'Zero admin bottlenecks',
+  desc: 'Eliminate employee administrative bottlenecks created by phone and in-person order management.',
+  icon: svg(<path d="M13 2 4 14h7l-1 8 9-12h-7z" />),
+  },
+  {
+  title: 'Customers who return',
+  desc: 'Strengthen customer retention by meeting shoppers where they already are, in their chat inbox.',
+  icon: svg(<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />),
+  },
+  ].map((item, i) => (
+  <div
+  key={i}
+  className="group relative overflow-hidden rounded-[20px] border border-[var(--line)] bg-[var(--paper)] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#a5b4fc] hover:shadow-[0_20px_50px_-12px_rgba(79,70,229,0.35)]"
+  >
+  {/* top accent line */}
+  <span className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-gradient-to-r from-indigo-500 via-violet-500 to-indigo-500 transition-transform duration-300 group-hover:scale-x-100" />
+  {/* glow blob */}
+  <span className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-[radial-gradient(circle,rgba(79,70,229,0.18),transparent_70%)] opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
+  {/* watermark number */}
+  <span className="pointer-events-none absolute -bottom-6 right-2 select-none text-[92px] font-extrabold leading-none tracking-tighter text-neutral-950/[0.05] transition-colors duration-300 group-hover:text-indigo-600/10">
+  {String(i + 1).padStart(2, '0')}
+  </span>
+  <div className="relative">
+  <div className="mb-5 inline-grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow-[0_10px_24px_-8px_rgba(79,70,229,0.7)] transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 [&>svg]:h-6 [&>svg]:w-6">
+  {item.icon}
+  </div>
+  <h3 className="mb-2 text-[17px] font-bold tracking-tight" style={{ color: 'var(--mist)' }}>
+  {item.title}
+  </h3>
+  <p className="text-[14.5px] leading-relaxed" style={{ color: 'var(--mist)', opacity: 0.65 }}>
+  {item.desc}
+  </p>
+  </div>
+  </div>
+  ))}
+  </div>
         </div>
       </section>
 
+      <PartnersSection />
       <TeamSection />
       <Testimonials />
       <PricingSection />
@@ -468,7 +510,7 @@ export default function Home() {
           borderTop: '1px solid var(--line)',
         }}
       >
-        <div className="container mx-auto max-w-3xl px-4 text-center sm:px-8">
+  {/* <div className="container mx-auto max-w-3xl px-4 text-center sm:px-8">
           <h2
             className="section-heading font-display mb-4 text-4xl"
             style={{ color: 'var(--mist)' }}
@@ -504,7 +546,7 @@ export default function Home() {
               Talk to Sales
             </Link>
           </div>
-        </div>
+  </div> */}
       </section>
     </div>
   );

@@ -48,7 +48,7 @@ const SECTIONS = [
     n: "08",
     title: "6. Pickup Orders",
     items: [
-      "Pickup orders must be collected from our store within the time window communicated at order confirmation (typically within 24–48 hours).",
+      "Pickup orders must be collected from our store within the time window communicated at order confirmation (typically within 24 to 48 hours).",
       "Orders not collected within the communicated window may be cancelled and restocked without further notice.",
       "Please be ready to confirm your order details (name/order reference) at the time of pickup.",
     ],
@@ -165,7 +165,7 @@ export default function TermsPage() {
                 <ul style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                   {s.items.map((item, i) => (
                     <li key={i} style={{ display: "flex", gap: "12px", fontSize: "0.9375rem", color: "var(--mist)", opacity: 0.7, lineHeight: 1.7 }}>
-                      <span style={{ color: "var(--pulse)", flexShrink: 0, marginTop: "2px" }}>—</span>
+                      <span style={{ color: "var(--pulse)", flexShrink: 0, marginTop: "2px" }}>•</span>
                       <span>{item}</span>
                     </li>
                   ))}
