@@ -78,7 +78,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-10 pb-12 sm:px-8 lg:pt-14 lg:pb-16">
+      <div className="relative z-10 site-container w-full pt-10 pb-12 lg:pt-14 lg:pb-16">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-6">
           {/* Left copy */}
           <div className="text-center lg:text-left">
@@ -97,51 +97,53 @@ export function HeroSection() {
               <ArrowRight className="h-3.5 w-3.5 text-[#4169E1]" />
             </div>
 
-            <h1
-              className="font-display mb-5"
-              style={{
-                fontSize: 'clamp(2.25rem, 4.2vw, 3.75rem)',
-                lineHeight: 1.05,
-                letterSpacing: '-0.03em',
-                fontWeight: 700,
-              }}
-            >
-              {LINES.map((line, i) => (
-                <span key={i} className="block overflow-hidden pb-1">
-                  <span
-                    className={started ? 'line-reveal' : ''}
-                    style={{
-                      display: 'block',
-                      animationDelay: `${i * 0.12}s`,
-                      animationFillMode: 'both',
-                      color: 'var(--mist)',
-                      fontSize:
-                        i === 2
-                          ? 'clamp(2.25rem, 4.2vw, 3.75rem)'
-                          : 'clamp(1.9rem, 3.4vw, 2.6rem)',
-                      lineHeight: 1.05,
-                      fontWeight: i === 2 ? 800 : 700,
-                      letterSpacing: '-0.03em',
-                    }}
-                  >
-                    {i === 2 ? (
+                <h1
+                  className="font-display mb-5"
+                  style={{
+                    fontSize: 'clamp(3.5rem, 7vw, 6.5rem)',
+                    lineHeight: 1.05,
+                    letterSpacing: '-0.04em',
+                    fontWeight: 800,
+                  }}
+                >
+                  {LINES.map((line, i) => (
+                    <span key={i} className="block overflow-hidden pb-1">
                       <span
+                        className={started ? 'line-reveal' : ''}
                         style={{
-                          background: 'linear-gradient(92deg, #4169E1 10%, #4169E1 50%, #4169E1 90%)',
+                          display: 'block',
+                          animationDelay: `${i * 0.12}s`,
+                          animationFillMode: 'both',
+                          background: i === 2
+                            ? 'linear-gradient(92deg, #1e40af 0%, #3b82f6 50%, #1e40af 100%)'
+                            : 'linear-gradient(92deg, #1e293b 0%, #334155 50%, #1e293b 100%)',
                           WebkitBackgroundClip: 'text',
                           backgroundClip: 'text',
                           color: 'transparent',
+                          fontSize: i === 2 ? 'clamp(3.8rem, 8vw, 7rem)' : 'inherit',
+                          fontWeight: i === 2 ? 900 : 'inherit',
                         }}
                       >
-                        {line}
+                        {i === 2 ? (
+                          <span
+                            style={{
+                              background: 'linear-gradient(92deg, #1e40af 0%, #3b82f6 40%, #1e40af 100%)',
+                              WebkitBackgroundClip: 'text',
+                              backgroundClip: 'text',
+                              color: 'transparent',
+                              display: 'block',
+                              filter: 'drop-shadow(0 4px 6px rgba(30, 64, 175, 0.5))',
+                            }}
+                          >
+                            {line}
+                          </span>
+                        ) : (
+                          line
+                        )}
                       </span>
-                    ) : (
-                      line
-                    )}
-                  </span>
-                </span>
-              ))}
-            </h1>
+                    </span>
+                  ))}
+                </h1>
 
             <p
               className="mx-auto mb-7 max-w-xl leading-relaxed text-neutral-600 lg:mx-0"
@@ -193,7 +195,7 @@ export function HeroSection() {
 
       {/* partner marquee */}
       <div className="relative z-10 border-t border-neutral-200/70 bg-white/60 backdrop-blur">
-        <div className="mx-auto max-w-6xl px-4 py-5 sm:px-8">
+        <div className="site-container py-5">
           <p
             className="mb-3 text-center font-mono text-[11px] tracking-[0.18em] text-neutral-400"
           >
