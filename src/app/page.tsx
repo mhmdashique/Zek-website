@@ -4,7 +4,6 @@ import { TeamSection } from '@/components/visuals/TeamSection';
 import { FAQSection } from '@/components/visuals/FAQSection';
 import { PricingSection } from '@/components/visuals/PricingSection';
 import { Testimonials } from '@/components/visuals/Testimonials';
-import { PartnersSection } from '@/components/visuals/PartnersSection';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
@@ -263,17 +262,20 @@ export default function Home() {
               className="section-heading font-display mb-3 text-4xl"
               style={{ color: 'var(--mist)' }}
             >
-              A WhatsApp-native AI shopping assistant
+              A WhatsApp-native AI sales assistant that plugs into any
+              e-commerce platform
             </h2>
             <p
               className="section-subheading"
               style={{ color: 'var(--mist)', opacity: 0.6, maxWidth: '640px' }}
             >
-              An AI chatbot on WhatsApp that connects directly to a store's live
-              inventory, letting customers order groceries conversationally
-              instead of through an app or website. It turns a messy grocery
-              list into a completed, paid order without a human employee in the
-              loop.
+              An AI assistant on WhatsApp that connects directly to your
+              store&rsquo;s live catalog, inventory, and payments, whatever
+              platform you run on. Customers browse, order, and pay in a simple
+              conversation, with no app to download and no website to navigate.
+              It turns a messy message like &ldquo;2 kg rice, a dozen eggs and
+              some milk&rdquo; into a confirmed, paid order without a human in
+              the loop.
             </p>
           </div>
 
@@ -495,7 +497,6 @@ export default function Home() {
         </div>
       </section>
 
-      <PartnersSection />
       <TeamSection />
       <Testimonials />
       <PricingSection />

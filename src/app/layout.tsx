@@ -1,13 +1,20 @@
 import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 
-const siteFont = Poppins({
+const bodyFont = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-site',
+  weight: ['400', '500'],
+  variable: '--font-body',
+  display: 'swap',
+});
+
+const headingFont = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['600', '700'],
+  variable: '--font-heading',
   display: 'swap',
 });
 
@@ -31,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${siteFont.variable} h-full`}
+      className={`${bodyFont.variable} ${headingFont.variable} h-full`}
       data-scroll-behavior="smooth"
     >
       <body
@@ -39,7 +46,7 @@ export default function RootLayout({
         style={{
           background: 'var(--page-gradient)',
           color: 'var(--mist)',
-          fontFamily: 'var(--font-site)',
+          fontFamily: 'var(--font-body)',
         }}
       >
         <Navbar />

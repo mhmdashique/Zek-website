@@ -15,10 +15,11 @@
   --card-hover-shadow: 0 8px 24px rgba(79, 70, 229, 0.08);
 
   /* Typography */
-  --font-site: 'Poppins', sans-serif;
-  --font-display: var(--font-site), sans-serif;
-  --font-body: var(--font-site), sans-serif;
-  --font-mono: var(--font-site), sans-serif;
+  --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-site: var(--font-body), system-ui, sans-serif;
+  --font-display: var(--font-heading), system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* Scale */
   --text-72: 4.5rem;
@@ -46,9 +47,19 @@ body {
   color: var(--mist);
   font-size: var(--text-17);
   line-height: 1.6;
-  font-family: var(--font-site), sans-serif;
+  font-family: var(--font-body);
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+.btn {
+  font-family: var(--font-heading);
+  font-weight: 700;
 }
 
 .hero-surface {
@@ -115,7 +126,8 @@ button {
 }
 
 .section-heading {
-  font-weight: 800 !important;
+  font-family: var(--font-heading);
+  font-weight: 700 !important;
   font-size: clamp(2.25rem, 4vw, 3.5rem) !important;
   line-height: 1.12 !important;
   letter-spacing: -0.03em;
@@ -123,7 +135,8 @@ button {
 
 section h1,
 section h2 {
-  font-weight: 800 !important;
+  font-family: var(--font-heading);
+  font-weight: 700 !important;
   font-size: clamp(2.25rem, 4vw, 3.5rem) !important;
   line-height: 1.12 !important;
   letter-spacing: -0.03em;
