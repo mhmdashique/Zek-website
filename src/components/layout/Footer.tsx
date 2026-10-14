@@ -36,7 +36,7 @@ export function Footer() {
     <footer
       style={{ background: 'var(--void)', borderTop: '1px solid var(--line)' }}
     >
-      <div className="container mx-auto max-w-6xl px-4 py-16 sm:px-8">
+      <div className="site-container py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Link

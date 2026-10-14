@@ -41,13 +41,19 @@ html {
   font-size: 100%;
 }
 
-/* Global 15% downscale on large desktop only (1536px+).
-   Tailwind v4 + all rem/clamp() typography scale automatically.
-   Tablet and mobile (<1536px) are untouched.
-   To adjust later, change 85% (e.g. 80% = stronger shrink). */
+/* ─── Global scale — THE single knob for overall site size ───
+   Base 100%, 90% on small desktop (1280px+), 80% on large desktop (1536px+).
+   Every Tailwind utility and all rem/clamp() typography follow automatically.
+   Tablet and mobile (<1280px) are untouched. No `zoom`, no page-level scale.
+   To adjust later: lower 80% (e.g. 75%) for smaller, raise it for larger. */
+@media (min-width: 1280px) {
+  html {
+    font-size: 90%;
+  }
+}
 @media (min-width: 1536px) {
   html {
-    font-size: 85%;
+    font-size: 80%;
   }
 }
 
@@ -177,6 +183,15 @@ section h2 {
 }
 .border-line {
   border-color: var(--line);
+}
+
+/* ─── Shared section container (single source for content width) ───
+   width: min(100% - 2rem, 80rem); centered. Keeps ultra-wide (2560px+)
+   screens from stretching the layout. Side gutters are baked in, so
+   wrappers using this class don't need px-4 / sm:px-8. */
+.site-container {
+  width: min(100% - 2rem, 80rem);
+  margin-inline: auto;
 }
 
 input,

@@ -22,7 +22,7 @@ export default function DemoPage() {
             'radial-gradient(55% 70% at 50% 0%, rgba(65,105,225,0.10), transparent 70%), var(--void)',
         }}
       >
-        <div className="container mx-auto max-w-6xl px-4 text-center sm:px-8">
+        <div className="site-container text-center">
           <Link
             href="/"
             className="mb-8 inline-flex items-center gap-2 font-mono text-xs"
@@ -94,7 +94,7 @@ export default function DemoPage() {
         </div>
       </section>
 
-      <div className="container mx-auto max-w-6xl px-4 py-14 sm:px-8 sm:py-16">
+      <div className="site-container py-14 sm:py-16">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Contact panel */}
           <div

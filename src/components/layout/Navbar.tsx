@@ -14,6 +14,7 @@ const NAV_LINKS: NavLink[] = [
   { href: '/#product', label: 'Product', section: 'product' },
   { href: '/#solutions', label: 'Solutions', section: 'solutions' },
   { href: '/#about', label: 'About', section: 'about' },
+  { href: '/pricing', label: 'Pricing' },
   { href: '/#faq', label: 'FAQ', section: 'faq' },
 ];
 
@@ -235,17 +236,6 @@ export function Navbar() {
   scrolled ? 'mt-2' : 'mx-3 mt-2',
   ].join(' ')}
             >
-  <div className="flex items-center justify-between rounded-xl bg-gradient-to-r from-[#4169E1] via-[#2F4AC8] to-[#2F4AC8] px-4 py-3 text-white">
-  <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em]">
-  <span className="relative flex h-2 w-2">
-  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-75" />
-  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-300" />
-            </span>
-  Live ops
-  </div>
-  <span className="text-[11px] font-medium text-white/80">Avg. response &lt; 2 min</span>
-        </div>
-
   <div className="p-1.5">
   {NAV_LINKS.map(({ href, label, section }, i) => {
   const active = section ? activeSection === section : pathname === href;

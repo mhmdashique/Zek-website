@@ -59,7 +59,7 @@ export default function AboutPage() {
           <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(to right, rgba(15,15,15,0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,15,15,0.045) 1px, transparent 1px)', backgroundSize: '56px 56px', maskImage: 'radial-gradient(ellipse 90% 70% at 50% 0%, black 55%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse 90% 70% at 50% 0%, black 55%, transparent 100%)' }} />
           <div className="absolute -top-40 left-1/2 h-[420px] w-[820px] -translate-x-1/2 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(65,105,225,0.20), rgba(65,105,225,0.08), transparent 70%)' }} />
         </div>
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-8">
+        <div className="relative site-container">
           <Link href="/" className="mb-6 inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-[#4169E1]">
             <ArrowLeft className="h-4 w-4" /> Back to home
           </Link>
@@ -88,7 +88,7 @@ export default function AboutPage() {
 
       {/* ── Our story ──────────────────────────────── */}
       <section className="w-full border-t border-neutral-200/70 py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-8">
+        <div className="site-container">
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
             <div className="lg:sticky lg:top-28">
               <Kicker>OUR STORY</Kicker>
@@ -127,7 +127,7 @@ export default function AboutPage() {
 
       {/* ── Mission & Vision ───────────────────────── */}
       <section className="w-full border-t border-neutral-200/70 py-20 sm:py-24" style={{ background: '#F8FAFF' }}>
-        <div className="mx-auto max-w-6xl px-4 sm:px-8">
+        <div className="site-container">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <div className="rounded-3xl border border-neutral-200/90 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#4169E1] hover:shadow-[0_24px_60px_-16px_rgba(65,105,225,0.28)]">
               <div className="mb-5 inline-grid h-12 w-12 place-items-center rounded-2xl bg-[#4169E1] text-white shadow-lg">
@@ -163,7 +163,7 @@ export default function AboutPage() {
 
       {/* ── Old way vs Zekvian way ─────────────────── */}
       <section className="w-full border-t border-neutral-200/70 bg-white py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-8">
+        <div className="site-container">
           <Kicker>WHY ZEKVIAN</Kicker>
           <h2
             className="font-display mt-5 mb-12 text-4xl text-neutral-950 sm:text-5xl"

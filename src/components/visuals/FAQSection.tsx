@@ -255,7 +255,7 @@ export function FAQSection() {
   View all FAQs <span aria-hidden>→</span>
   </Link>
   <Link
-  href="/contact"
+  href="/demo"
   style={{
   display: 'inline-flex',
   alignItems: 'center',

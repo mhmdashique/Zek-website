@@ -78,7 +78,7 @@ export default function Home() {
                 &ldquo;2 kg rice, a dozen eggs and some milk&rdquo; becomes a paid order with no human in the loop.
               </p>
             </div>
-            <Link href="/product" className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-[#4169E1] bg-[#F0F8FF] px-5 py-3 text-sm font-semibold text-[#4169E1] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+            <Link href="/product" className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-[#4169E1] bg-[#F8FAFF] px-5 py-3 text-sm font-semibold text-[#4169E1] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
               Explore full product <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
@@ -127,7 +127,7 @@ export default function Home() {
                 <p className="mt-5 max-w-md text-[16px] leading-relaxed text-neutral-600">
                   Not another delivery app. Your WhatsApp <em className="text-neutral-950 not-italic font-semibold">is</em> your store — live stock, instant checkout, zero commission.
                 </p>
-                <Link href="/about" className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#4169E1] bg-[#F0F8FF] px-6 py-3 text-sm font-semibold text-[#4169E1] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                <Link href="/about" className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#4169E1] bg-[#F8FAFF] px-6 py-3 text-sm font-semibold text-[#4169E1] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
                   Our story <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

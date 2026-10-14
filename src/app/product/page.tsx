@@ -1,10 +1,6 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
-import { HowItWorks } from '@/components/visuals/HowItWorks';
-import { TeamSection } from '@/components/visuals/TeamSection';
-import { Testimonials } from '@/components/visuals/Testimonials';
-import { PricingSection } from '@/components/visuals/PricingSection';
-import { FAQSection } from '@/components/visuals/FAQSection';
+import { AiEngineScroll } from '@/components/visuals/SolutionsScroll';
 import {
   MessageCircle,
   ScanSearch,
@@ -12,13 +8,11 @@ import {
   BadgeIndianRupee,
   MousePointerClick,
   Truck,
-  ArrowRight,
   ArrowLeft,
   Bot,
   Store,
   Bike,
   LayoutDashboard,
-  BrainCircuit,
   BellRing,
   BarChart3,
   Layers,
@@ -57,12 +51,6 @@ const CORE = [
   { icon: BadgeIndianRupee, title: 'Link & Invoice Checkout', desc: 'Calculates dynamic total pricing, takes final modifications in-chat, and produces direct digital invoices and secure checkout links.' },
 ];
 
-const AI_ENGINE = [
-  { icon: BrainCircuit, title: 'Behavioral AI Matching', desc: 'The algorithm analyzes customer order histories to instantly suggest the most appropriate, personalized alternatives when items are out of stock.' },
-  { icon: Repeat2, title: 'Easy 1-Click Re-ordering', desc: 'Re-order entire household monthly lists in seconds, directly inside the chat window.' },
-  { icon: BellRing, title: 'Integrated Delivery Tracking', desc: 'Dynamic updates tell users exactly when employees pack, dispatch, and arrive with their groceries.' },
-];
-
 const DASHBOARD = [
   { icon: BarChart3, title: 'Flexible Revenue Analysis', desc: 'Track generated revenue daily, weekly, monthly, and yearly, instantly.', col: 'md:col-span-2' },
   { icon: BellRing, title: 'Out-of-Stock Predictive Alerts', desc: 'Immediate warnings on draining inventories before checkout drop-offs occur.' },
@@ -93,7 +81,7 @@ export default function ProductPage() {
           <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(to right, rgba(15,15,15,0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,15,15,0.045) 1px, transparent 1px)', backgroundSize: '56px 56px', maskImage: 'radial-gradient(ellipse 90% 70% at 50% 0%, black 55%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse 90% 70% at 50% 0%, black 55%, transparent 100%)' }} />
           <div className="absolute -top-40 left-1/2 h-[420px] w-[820px] -translate-x-1/2 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(65,105,225,0.20), rgba(65,105,225,0.08), transparent 70%)' }} />
         </div>
-        <div className="relative mx-auto max-w-6xl px-4 text-center sm:px-8">
+        <div className="relative site-container text-center">
           <div className="mb-6 flex justify-center">
             <Link href="/" className="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-[#4169E1]">
               <ArrowLeft className="h-4 w-4" /> Back to home
@@ -120,9 +108,8 @@ export default function ProductPage() {
       </section>
 
       {/* ── Key features bento ───────────────────── */}
-      <HowItWorks />
       <section className="w-full border-t border-neutral-200/70 py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-8">
+        <div className="site-container">
           <Kicker>KEY FEATURES</Kicker>
           <h2 className="font-display mt-5 max-w-2xl text-4xl text-neutral-950 sm:text-5xl" style={{ letterSpacing: '-0.03em', lineHeight: 1.08 }}>
             Everything happens <span className="text-[#4169E1]">inside WhatsApp</span>
@@ -144,7 +131,7 @@ export default function ProductPage() {
 
       {/* ── Four pillars ─────────────────────────── */}
       <section className="w-full border-t border-neutral-200/70 bg-white py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-8">
+        <div className="site-container">
           <Kicker>FOUR PILLARS</Kicker>
           <h2 className="font-display mt-5 text-4xl text-neutral-950 sm:text-5xl" style={{ letterSpacing: '-0.03em', lineHeight: 1.08 }}>
             The foundation of every order
@@ -164,7 +151,7 @@ export default function ProductPage() {
 
       {/* ── Conversational commerce split ─────────── */}
       <section className="w-full border-t border-neutral-200/70 py-20 sm:py-24">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 sm:px-8 lg:grid-cols-2">
+        <div className="site-container grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div>
             <Kicker>CONVERSATIONAL COMMERCE</Kicker>
             <h2 className="font-display mt-5 text-4xl text-neutral-950 sm:text-5xl" style={{ letterSpacing: '-0.03em', lineHeight: 1.08 }}>
@@ -192,7 +179,7 @@ export default function ProductPage() {
 
       {/* ── Core capabilities ────────────────────── */}
       <section className="w-full border-t border-neutral-200/70 bg-white py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-8">
+        <div className="site-container">
           <Kicker>CORE CAPABILITIES</Kicker>
           <h2 className="font-display mt-5 text-4xl text-neutral-950 sm:text-5xl" style={{ letterSpacing: '-0.03em', lineHeight: 1.08 }}>
             What the bot does out of the box
@@ -217,39 +204,11 @@ export default function ProductPage() {
       </section>
 
       {/* ── AI engine sticky ─────────────────────── */}
-      <section className="w-full border-t border-neutral-200/70 py-20 sm:py-24">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-4 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <Kicker>AI ENGINE</Kicker>
-            <h2 className="font-display mt-5 text-4xl text-neutral-950 sm:text-5xl" style={{ letterSpacing: '-0.03em', lineHeight: 1.08 }}>
-              Interactive AI WhatsApp engine
-            </h2>
-            <p className="mt-4 max-w-md text-[16px] leading-relaxed text-neutral-600">
-              Beyond basic chatbots — behavioral intelligence that learns from every order and adapts in real time.
-            </p>
-            <Link href="/demo" className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#4169E1] px-6 py-3 text-sm font-semibold text-white shadow-[0_12px_30px_-8px_rgba(65,105,225,0.6)] transition hover:-translate-y-0.5 hover:bg-[#2F4AC8]">
-              Try the engine <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <div className="flex flex-col gap-3">
-            {AI_ENGINE.map((a) => (
-              <div key={a.title} className="group flex items-start gap-4 rounded-2xl border border-neutral-200/90 bg-white p-6 transition hover:-translate-y-0.5 hover:border-[#4169E1] hover:shadow-[0_18px_44px_-16px_rgba(65,105,225,0.3)]">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-neutral-950 text-white transition group-hover:scale-110">
-                  <a.icon className="h-5 w-5" />
-                </span>
-                <div>
-                  <h3 className="text-[16px] font-bold tracking-tight text-neutral-950">{a.title}</h3>
-                  <p className="mt-1 text-[14.5px] leading-relaxed text-neutral-600">{a.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <AiEngineScroll />
 
       {/* ── Dashboard bento ──────────────────────── */}
       <section className="w-full border-t border-neutral-200/70 bg-white py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-8">
+        <div className="site-container">
           <Kicker>DASHBOARD</Kicker>
           <h2 className="font-display mt-5 text-4xl text-neutral-950 sm:text-5xl" style={{ letterSpacing: '-0.03em', lineHeight: 1.08 }}>
             Supermarket SaaS dashboard
@@ -272,7 +231,7 @@ export default function ProductPage() {
 
       {/* ── Suite ────────────────────────────────── */}
       <section className="w-full border-t border-neutral-200/70 py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 text-center sm:px-8">
+        <div className="site-container text-center">
           <Kicker>SUITE</Kicker>
           <h2 className="font-display mx-auto mt-5 max-w-2xl text-4xl text-neutral-950 sm:text-5xl" style={{ letterSpacing: '-0.03em', lineHeight: 1.08 }}>
             The 4 essential suite apps
@@ -295,10 +254,6 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <TeamSection />
-      <Testimonials />
-      <PricingSection />
-      <FAQSection />
     </div>
   );
 }

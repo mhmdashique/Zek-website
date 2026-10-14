@@ -61,7 +61,7 @@ export default function SolutionsPage() {
           <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(to right, rgba(15,15,15,0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,15,15,0.045) 1px, transparent 1px)', backgroundSize: '56px 56px', maskImage: 'radial-gradient(ellipse 90% 70% at 50% 0%, black 55%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse 90% 70% at 50% 0%, black 55%, transparent 100%)' }} />
           <div className="absolute -top-40 left-1/2 h-[420px] w-[820px] -translate-x-1/2 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(65,105,225,0.20), rgba(65,105,225,0.08), transparent 70%)' }} />
         </div>
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-8">
+        <div className="relative site-container">
           <Link href="/" className="mb-6 inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-[#4169E1]">
             <ArrowLeft className="h-4 w-4" /> Back to home
           </Link>
@@ -82,7 +82,7 @@ export default function SolutionsPage() {
 
       {/* ── Featured + grid ──────────────────────── */}
       <section className="w-full border-t border-neutral-200/70 py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-8">
+        <div className="site-container">
           <article className="group relative mb-4 overflow-hidden rounded-[28px] border border-neutral-200/90 bg-white p-8 shadow-[0_30px_80px_-30px_rgba(65,105,225,0.25)] transition-all duration-300 hover:-translate-y-1 hover:border-[#4169E1] hover:shadow-[0_36px_90px_-24px_rgba(65,105,225,0.35)] sm:p-12">
             <div aria-hidden className="pointer-events-none absolute inset-0">
               <div className="absolute inset-0" style={{ background: 'linear-gradient(120deg, rgba(65,105,225,0.10) 0%, rgba(47,74,200,0.05) 35%, transparent 65%)' }} />
@@ -122,7 +122,7 @@ export default function SolutionsPage() {
 
       {/* ── Pain comparison (same as About pattern) ─ */}
       <section className="w-full border-t border-neutral-200/70 bg-white py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-8">
+        <div className="site-container">
           <Kicker>WHAT THIS SOLVES</Kicker>
           <h2 className="font-display mt-5 mb-12 text-4xl text-neutral-950 sm:text-5xl" style={{ letterSpacing: '-0.03em', lineHeight: 1.08 }}>
             Pain point today → Zekvian fix now
@@ -147,7 +147,7 @@ export default function SolutionsPage() {
 
       {/* ── Net effect metrics panel (same as landing) ─ */}
       <section className="w-full border-t border-neutral-200/70 py-20 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-8">
+        <div className="site-container">
           <div className="relative overflow-hidden rounded-[28px] border border-neutral-200/90 bg-white px-6 py-12 shadow-[0_30px_80px_-30px_rgba(65,105,225,0.25)] sm:px-12 sm:py-16">
             <div aria-hidden className="pointer-events-none absolute inset-0">
               <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(15,15,15,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(15,15,15,0.05) 1px, transparent 1px)', backgroundSize: '44px 44px', maskImage: 'radial-gradient(ellipse 80% 90% at 50% 0%, black, transparent 75%)' }} />

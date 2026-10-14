@@ -135,7 +135,7 @@ export function TeamSection() {
         scrollMarginTop: '76px',
       }}
     >
-      <div className="container mx-auto px-4 sm:px-8 max-w-5xl">
+      <div className="site-container">
         <div className="text-center mb-16">
           <span
             className="inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 font-mono text-[11px] font-semibold"

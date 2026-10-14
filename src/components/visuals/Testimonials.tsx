@@ -207,7 +207,7 @@ export function Testimonials() {
       className="w-full py-24"
       style={{ background: 'var(--void)', borderTop: '1px solid var(--line)' }}
     >
-      <div className="container mx-auto mb-14 max-w-6xl px-4 sm:px-8">
+      <div className="site-container mb-14">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <span

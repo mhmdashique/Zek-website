@@ -75,7 +75,7 @@ export default function PricingPage() {
 
   return (
     <div className="section-paper min-h-screen">
-      <div className="container mx-auto max-w-5xl px-4 py-24 sm:px-8">
+      <div className="site-container py-24">
         <div className="mb-16 text-center">
           <h1
             className="font-display mb-4 text-5xl"
