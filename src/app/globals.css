@@ -38,6 +38,17 @@
 /* ─── Base ────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+/* Global 15% downscale on large desktop only (1536px+).
+   Tailwind v4 + all rem/clamp() typography scale automatically.
+   Tablet and mobile (<1536px) are untouched.
+   To adjust later, change 85% (e.g. 80% = stronger shrink). */
+@media (min-width: 1536px) {
+  html {
+    font-size: 85%;
+  }
 }
 
 body {
@@ -794,6 +805,28 @@ textarea::placeholder {
   }
   .phone-secondary {
     margin-left: -34px;
+  }
+}
+
+/* Large-desktop phone downscale (~15% smaller, px-based so the
+   root 85% rem scale doesn't double-shrink them). */
+@media (min-width: 1536px) {
+  .phone-showcase {
+    min-height: 480px;
+  }
+  .phone-frame {
+    width: 184px;
+    height: 400px;
+    border-radius: 29px;
+  }
+  .phone-secondary {
+    margin-top: 40px;
+    margin-left: -36px;
+    width: 190px;
+    height: 414px;
+  }
+  .phone-screen {
+    border-radius: 23px;
   }
 }
 

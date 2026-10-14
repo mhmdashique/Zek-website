@@ -80,7 +80,7 @@ export function PricingSection() {
         background: "var(--void)",
         borderTop: "1px solid var(--line)",
         padding: "72px 0",
-        scrollMarginTop: "90px",
+        scrollMarginTop: "76px",
       }}
     >
       <div className="container mx-auto px-4 sm:px-8 max-w-5xl">

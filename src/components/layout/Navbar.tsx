@@ -86,7 +86,7 @@ export function Navbar() {
       const el = document.getElementById(id);
       if (el) {
         e.preventDefault();
-  const top = el.getBoundingClientRect().top + window.scrollY - 88;
+  const top = el.getBoundingClientRect().top + window.scrollY - 76;
   window.scrollTo({ top, behavior: 'smooth' });
   setMenuOpen(false);
       }
@@ -114,7 +114,7 @@ export function Navbar() {
   ? 'rounded-2xl border-black/[0.08] bg-white/25 shadow-[0_12px_40px_-12px_rgba(15,15,20,0.25),0_2px_8px_rgba(15,15,20,0.06),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-2xl'
   : 'rounded-none border-x-0 border-t-0 border-black/[0.06] bg-white/25 shadow-[0_8px_30px_-12px_rgba(15,15,20,0.18),inset_0_1px_0_rgba(255,255,255,0.8)] backdrop-blur-xl',
   ].join(' ')}
-  style={{ height: scrolled ? 68 : 84 }}
+  style={{ height: scrolled ? '3.625rem' : '4.5rem' }}
           >
   {/* top highlight + scroll progress */}
   <span
@@ -143,7 +143,7 @@ export function Navbar() {
   </span>
   </span>
   <span className="leading-none">
-  <span className="block text-[18px] font-extrabold tracking-[-0.03em] text-neutral-950">
+  <span className="block text-[1.0625rem] font-extrabold tracking-[-0.03em] text-neutral-950">
               ZEKVIAN
   </span>
             </span>
@@ -163,7 +163,7 @@ export function Navbar() {
                     href={href}
                     onClick={(e) => handleNavClick(e, href)}
   className={[
-  'relative shrink-0 whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-bold transition-colors duration-200 outline-none',
+  'relative shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-[0.8125rem] font-bold transition-colors duration-200 outline-none',
   active ? 'text-neutral-950' : 'text-neutral-500 hover:text-neutral-950',
   ].join(' ')}
                   >
@@ -188,7 +188,7 @@ export function Navbar() {
   <div className="hidden shrink-0 items-center gap-2 lg:flex">
             <Link
               href="/demo"
-  className="group relative inline-flex items-center gap-1.5 overflow-hidden rounded-full bg-[#4169E1] py-2.5 pl-5 pr-3.5 text-sm font-bold text-white shadow-[0_8px_20px_-8px_rgba(65,105,225,0.8)] transition-all duration-300 hover:bg-[#3558E8] hover:shadow-[0_10px_28px_-8px_rgba(65,105,225,0.9)]"
+  className="group relative inline-flex items-center gap-1.5 overflow-hidden rounded-full bg-[#4169E1] py-2 pl-4 pr-3 text-[0.8125rem] font-bold text-white shadow-[0_8px_20px_-8px_rgba(65,105,225,0.8)] transition-all duration-300 hover:bg-[#3558E8] hover:shadow-[0_10px_28px_-8px_rgba(65,105,225,0.9)]"
             >
   <span
   aria-hidden

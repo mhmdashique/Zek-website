@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { ArrowRight, Play, Zap } from 'lucide-react';
 import { PhoneShowcase } from '@/components/visuals/PhoneShowcase';
 
-const LINES = ['POWERING THE', 'FUTURE WITH', "ZEKVIAN'S"];
+const LINES = ['POWERING THE', 'FUTURE WITH', "ZEKVIAN"];
 
 const PARTNER_COMPANIES = [
   'Uber',
@@ -64,7 +64,7 @@ export function HeroSection() {
             style={{
               fontFamily: 'var(--font-heading)',
               fontWeight: 800,
-              fontSize: 'clamp(6rem, 20vw, 18rem)',
+              fontSize: 'clamp(5rem, 17vw, 15rem)',
               lineHeight: 1,
               letterSpacing: '-0.02em',
               textAlign: 'center',
@@ -78,8 +78,8 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-14 pb-16 sm:px-8 lg:pt-20 lg:pb-24">
-        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[1.02fr_0.98fr] lg:gap-6">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-10 pb-12 sm:px-8 lg:pt-14 lg:pb-16">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-6">
           {/* Left copy */}
           <div className="text-center lg:text-left">
             <div
@@ -98,10 +98,10 @@ export function HeroSection() {
             </div>
 
             <h1
-              className="font-display mb-6"
+              className="font-display mb-5"
               style={{
-                fontSize: 'clamp(2.2rem, 5vw, 3.8rem)',
-                lineHeight: 1.06,
+                fontSize: 'clamp(2.25rem, 4.2vw, 3.75rem)',
+                lineHeight: 1.05,
                 letterSpacing: '-0.03em',
                 fontWeight: 700,
               }}
@@ -117,9 +117,9 @@ export function HeroSection() {
                       color: 'var(--mist)',
                       fontSize:
                         i === 2
-                          ? 'clamp(2.8rem, 6.5vw, 5rem)'
-                          : 'clamp(1.9rem, 4vw, 3rem)',
-                      lineHeight: i === 2 ? 1.02 : 1.06,
+                          ? 'clamp(2.25rem, 4.2vw, 3.75rem)'
+                          : 'clamp(1.9rem, 3.4vw, 2.6rem)',
+                      lineHeight: 1.05,
                       fontWeight: i === 2 ? 800 : 700,
                       letterSpacing: '-0.03em',
                     }}
@@ -144,8 +144,9 @@ export function HeroSection() {
             </h1>
 
             <p
-              className="mx-auto mb-8 max-w-xl text-[17px] leading-relaxed text-neutral-600 lg:mx-0"
+              className="mx-auto mb-7 max-w-xl leading-relaxed text-neutral-600 lg:mx-0"
               style={{
+                fontSize: 'clamp(1rem, 1.2vw, 1.125rem)',
                 opacity: started ? 1 : 0,
                 transform: started ? 'translateY(0)' : 'translateY(10px)',
                 transition: 'all 0.55s 0.35s cubic-bezier(0,0,0.2,1)',
@@ -165,7 +166,7 @@ export function HeroSection() {
             >
               <Link
                 href="/#how-it-works"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#4169E1] to-[#2F4AC8] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_12px_28px_-10px_rgba(65,105,225,0.65)] backdrop-blur transition hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-10px_rgba(65,105,225,0.75)]"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#4169E1] to-[#2F4AC8] px-6 py-3 text-[0.8125rem] font-semibold text-white shadow-[0_12px_28px_-10px_rgba(65,105,225,0.65)] backdrop-blur transition hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-10px_rgba(65,105,225,0.75)]"
               >
                 <span className="grid h-6 w-6 place-items-center rounded-full bg-white/20 text-white">
                   <Play className="h-3 w-3 fill-current" />
@@ -177,7 +178,7 @@ export function HeroSection() {
           </div>
 
           {/* Right: phones with gradient glow (mockups untouched) */}
-          <div className="relative mx-auto w-full max-w-[560px]">
+          <div className="relative mx-auto w-full max-w-[520px]">
             <div
               aria-hidden
               className="absolute inset-x-10 top-8 bottom-8 rounded-[48px] blur-2xl"
