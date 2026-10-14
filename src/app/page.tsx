@@ -66,7 +66,7 @@ export default function Home() {
         <div aria-hidden className="pointer-events-none absolute inset-0">
           <div className="absolute -top-32 left-1/2 h-80 w-[720px] -translate-x-1/2 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(65,105,225,0.12), transparent 70%)' }} />
         </div>
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-8">
+        <div className="relative site-container">
           <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <Kicker>PRODUCT</Kicker>
@@ -78,7 +78,7 @@ export default function Home() {
                 &ldquo;2 kg rice, a dozen eggs and some milk&rdquo; becomes a paid order with no human in the loop.
               </p>
             </div>
-            <Link href="/product" className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-[#4169E1] bg-[#F0F8FF] px-5 py-3 text-sm font-semibold text-[#4169E1] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+            <Link href="#product" className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-[#4169E1] bg-[#F0F8FF] px-5 py-3 text-sm font-semibold text-[#4169E1] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
               Explore full product <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
@@ -110,7 +110,7 @@ export default function Home() {
 
       {/* ── About / light premium panel ───────────────── */}
       <section id="about" className="w-full py-20 sm:py-24" style={{ background: 'var(--void)', borderTop: '1px solid var(--line)' }}>
-        <div className="mx-auto max-w-6xl px-4 sm:px-8">
+        <div className="site-container">
           <div className="relative overflow-hidden rounded-[28px] border border-neutral-200/90 bg-white px-6 py-12 shadow-[0_30px_80px_-30px_rgba(65,105,225,0.10)] sm:px-12 sm:py-16">
             <span aria-hidden className="absolute inset-x-12 top-0 h-[3px] rounded-full bg-gradient-to-r from-[#4169E1] via-[#4169E1] to-[#4169E1]" />
             <div aria-hidden className="pointer-events-none absolute inset-0">
@@ -127,7 +127,7 @@ export default function Home() {
                 <p className="mt-5 max-w-md text-[16px] leading-relaxed text-neutral-600">
                   Not another delivery app. Your WhatsApp <em className="text-neutral-950 not-italic font-semibold">is</em> your store — live stock, instant checkout, zero commission.
                 </p>
-                <Link href="/about" className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#4169E1] bg-[#F0F8FF] px-6 py-3 text-sm font-semibold text-[#4169E1] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                <Link href="#about" className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#4169E1] bg-[#F0F8FF] px-6 py-3 text-sm font-semibold text-[#4169E1] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
                   Our story <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
