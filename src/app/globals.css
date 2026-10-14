@@ -2,17 +2,17 @@
 
 /* ─── ZEKVIAN Design Tokens ──────────────────────────────── */
 :root {
-  --void: #eef2ff;
+  --void: #F8FAFF;
   --mist: #0f0f0f;
   --paper: #ffffff;
-  --pulse: #4f46e5;
-  --ember: #4338ca;
+  --pulse: #4169E1;
+  --ember: #2F4AC8;
   --line: #e5e7eb;
   --text-muted: #9ca3af;
-  --badge-bg: #eef2ff;
-  --page-gradient: #eef2ff;
+  --badge-bg: #E9EFFF;
+  --page-gradient: #F8FAFF;
   --card-shadow: 0 4px 18px rgba(15, 15, 15, 0.05);
-  --card-hover-shadow: 0 8px 24px rgba(79, 70, 229, 0.08);
+  --card-hover-shadow: 0 8px 24px rgba(65, 105, 225, 0.08);
 
   /* Typography */
   --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -186,7 +186,7 @@ textarea::placeholder {
     box-shadow 0.25s var(--ease-std),
     border-color 0.25s var(--ease-std),
     background-color 0.25s var(--ease-std);
-  box-shadow: 0 6px 22px rgba(79, 70, 229, 0.06);
+  box-shadow: 0 6px 22px rgba(65, 105, 225, 0.06);
   border: 1px solid var(--line);
   border-radius: 20px;
   background: var(--paper) !important;
@@ -194,8 +194,8 @@ textarea::placeholder {
 
 .interactive-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(79, 70, 229, 0.12);
-  border-color: #a5b4fc;
+  box-shadow: 0 14px 32px rgba(65, 105, 225, 0.12);
+  border-color: #4169E1;
 }
 
 .team-card {
@@ -211,7 +211,7 @@ textarea::placeholder {
   right: -44px;
   bottom: -54px;
   z-index: -1;
-  border: 1px solid rgba(79, 70, 229, 0.12);
+  border: 1px solid rgba(65, 105, 225, 0.12);
   border-radius: 50%;
   width: 170px;
   height: 170px;
@@ -241,7 +241,7 @@ textarea::placeholder {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(79, 70, 229, 0.16), transparent 70%);
+  background: radial-gradient(circle, rgba(65, 105, 225, 0.16), transparent 70%);
   pointer-events: none;
   opacity: 0.55;
   transition: opacity 0.25s var(--ease-std);
@@ -250,7 +250,7 @@ textarea::placeholder {
 .feature-card:hover {
   transform: translateY(-6px);
   border-color: var(--pulse);
-  box-shadow: 0 18px 42px rgba(79, 70, 229, 0.2);
+  box-shadow: 0 18px 42px rgba(65, 105, 225, 0.2);
 }
 
 .feature-card:hover::after {
@@ -265,7 +265,7 @@ textarea::placeholder {
   height: 46px;
   border-radius: 12px;
   background: var(--badge-bg);
-  border: 1px solid #c7d2fe;
+  border: 1px solid #4169E1;
   margin-bottom: 18px;
 }
 
@@ -282,7 +282,7 @@ textarea::placeholder {
   height: 42px;
   border-radius: 11px;
   background: var(--badge-bg);
-  border: 1px solid #c7d2fe;
+  border: 1px solid #4169E1;
   color: var(--pulse);
   font-family: var(--font-mono);
   font-size: 0.85rem;
@@ -315,7 +315,7 @@ textarea::placeholder {
 }
 
 .feature-card:hover .team-avatar {
-  box-shadow: 0 0 22px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 0 22px rgba(65, 105, 225, 0.3);
 }
 
 /* ─── Animations ─────────────────────────────────────────── */
@@ -365,12 +365,12 @@ textarea::placeholder {
 
 .phone-glow {
   position: absolute;
-  opacity: 0.75;
+  opacity: 0.35;
   filter: blur(28px);
   border-radius: 50%;
   background: radial-gradient(
     ellipse,
-    rgba(79, 70, 229, 0.16),
+    rgba(47, 74, 200, 0.08),
     transparent 68%
   );
   width: 80%;
@@ -382,10 +382,10 @@ textarea::placeholder {
   transform: rotate(-7deg);
   z-index: 1;
   animation: phone-float 6s ease-in-out infinite;
-  box-shadow: 20px 28px 45px rgba(79, 70, 229, 0.16);
-  border: 1px solid #c7d2fe;
+  box-shadow: 20px 28px 45px rgba(47, 74, 200, 0.08);
+  border: 1px solid #DCE4FF;
   border-radius: 34px;
-  background: linear-gradient(145deg, #ffffff, #e0e7ff 65%, #c7d2fe);
+  background: linear-gradient(145deg, #ffffff, #F8FAFF 65%, #E9EFFF);
   padding: 8px;
   width: 216px;
   height: 470px;
@@ -404,7 +404,7 @@ textarea::placeholder {
 .phone-screen {
   position: relative;
   border-radius: 27px;
-  background: linear-gradient(160deg, #ffffff, #f8fafc 58%, #eef2ff);
+  background: linear-gradient(160deg, #ffffff, #F8FAFF 58%, #F8FAFF);
   height: 100%;
   overflow: hidden;
   color: var(--mist);
@@ -417,7 +417,7 @@ textarea::placeholder {
   inset: 0;
   background: linear-gradient(
     115deg,
-    rgba(79, 70, 229, 0.06),
+    rgba(47, 74, 200, 0.03),
     transparent 22%,
     transparent 72%,
     rgba(255, 255, 255, 0.45)
@@ -469,6 +469,40 @@ textarea::placeholder {
   font-family: var(--font-body);
 }
 
+/* Phone mockups — blue accents (no violet) */
+.phone-screen .app-mark,
+.phone-screen .mini-orb {
+  border-color: #4169E1;
+  color: #4169E1;
+}
+.phone-screen .app-avatar {
+  color: #4169E1;
+}
+.phone-screen .orb-spark {
+  color: #4169E1;
+}
+.phone-screen .ai-orb {
+  box-shadow: 0 0 26px rgba(47, 74, 200, 0.3);
+}
+.phone-screen .quick-actions > div {
+  color: #4169E1;
+}
+.phone-screen .order-items em,
+.phone-screen .chat-header small,
+.phone-screen .confirm small,
+.phone-screen .delivery-card small {
+  color: #4169E1;
+}
+.phone-screen .confirm small {
+  color: #16a34a;
+}
+.phone-screen .delivery-card small {
+  color: #16a34a;
+}
+.phone-screen .send-icon {
+  background: #4169E1;
+}
+
 .app-mark,
 .mini-orb {
   display: inline-flex;
@@ -501,7 +535,7 @@ textarea::placeholder {
 .ai-orb {
   display: grid;
   place-items: center;
-  box-shadow: 0 0 26px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 0 26px rgba(65, 105, 225, 0.3);
   border: 1px solid #e6e6e2;
   border-radius: 50%;
   background: #f5f5f2;
@@ -851,8 +885,8 @@ section h2 + p {
 .interactive-card:focus-within,
 .interactive-card:active {
   transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(79, 70, 229, 0.12);
-  border-color: #a5b4fc !important;
+  box-shadow: 0 14px 32px rgba(65, 105, 225, 0.12);
+  border-color: #4169E1 !important;
   background-color: var(--paper) !important;
 }
 

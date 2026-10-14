@@ -137,7 +137,7 @@ export function DemoRequestForm() {
           <input
             {...register('phone')}
             type="tel"
-            placeholder="+1 555 000 0000"
+            placeholder="+91 123 456 7890"
             style={inputStyle}
             onFocus={(e) => (e.target.style.borderColor = 'var(--pulse)')}
             onBlur={(e) => (e.target.style.borderColor = 'var(--line)')}
@@ -184,7 +184,7 @@ export function DemoRequestForm() {
         disabled={isSubmitting}
         className="w-full rounded-lg py-3 text-sm font-medium"
         style={{
-          background: isSubmitting ? '#a5b4fc' : 'var(--pulse)',
+          background: isSubmitting ? '#2F4AC8' : 'var(--pulse)',
           color: '#ffffff',
           cursor: isSubmitting ? 'not-allowed' : 'pointer',
           transition: 'background 0.15s var(--ease-std)',

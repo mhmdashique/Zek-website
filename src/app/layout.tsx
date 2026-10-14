@@ -50,7 +50,7 @@ export default function RootLayout({
         }}
       >
         <Navbar />
-  <main className="flex-1" style={{ paddingTop: '100px' }}>
+  <main className="flex-1" style={{ paddingTop: '84px' }}>
           {children}
         </main>
         <Footer />

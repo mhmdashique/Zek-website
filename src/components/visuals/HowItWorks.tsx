@@ -50,7 +50,7 @@ function ChatBubble({ step }: { step: (typeof STEPS)[number] }) {
         ? '#fefce8'
         : 'var(--badge-bg)';
   const accentBorder =
-    tone === 'green' ? '#86efac' : tone === 'yellow' ? '#fde68a' : '#c7d2fe';
+    tone === 'green' ? '#86efac' : tone === 'yellow' ? '#fde68a' : '#4169E1';
 
   return (
     <div
@@ -275,17 +275,26 @@ export function HowItWorks() {
         <div
           style={{ maxWidth: '1180px', margin: '0 auto', padding: '0 24px' }}
         >
-          <p
+          <span
+            className="inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 font-mono text-[11px] font-semibold"
             style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '0.75rem',
-              color: 'var(--pulse)',
-              letterSpacing: '0.12em',
+              borderColor: '#4169E1',
+              background: '#4169E1',
+              color: '#ffffff',
+              letterSpacing: '0.16em',
               marginBottom: '28px',
             }}
           >
+            <span
+              style={{
+                width: '6px',
+                height: '6px',
+                borderRadius: '50%',
+                background: '#ffffff',
+              }}
+            />
             HOW IT WORKS
-          </p>
+          </span>
 
           <div
             style={{
@@ -335,7 +344,13 @@ export function HowItWorks() {
                       ? '#16a34a'
                       : step.tone === 'yellow'
                         ? '#eab308'
-                        : '#3b82f6';
+                        : '#4169E1';
+                  const toneWash =
+                    step.tone === 'green'
+                      ? '#f0fdf4'
+                      : step.tone === 'yellow'
+                        ? '#fffbeb'
+                        : '#F8FAFF';
                   return (
                     <div
                       key={step.n}
@@ -346,7 +361,7 @@ export function HowItWorks() {
                         border: `1px solid ${toneBorder}`,
                         borderRadius: '14px',
                         background: isActive
-                          ? 'var(--badge-bg)'
+                          ? `linear-gradient(180deg, ${toneWash} 0%, #ffffff 75%)`
                           : 'var(--paper)',
                         overflow: 'hidden',
                         transition: reduceMotion

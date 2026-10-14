@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
       subject: `New Contact Form Submission: ${name}`,
       html: `
         <div style="font-family:Arial,sans-serif;max-width:640px;margin:0 auto;color:#0f0f0f">
-          <div style="background:#4f46e5;color:#fff;padding:24px 28px;border-radius:14px 14px 0 0">
+          <div style="background:#4169E1;color:#fff;padding:24px 28px;border-radius:14px 14px 0 0">
             <div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;opacity:.8">ZEKVIAN CONTACT</div>
             <h2 style="margin:8px 0 0;font-size:24px">New message from your website</h2>
           </div>
@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
             <p><strong>Name:</strong> ${safeName}</p>
             <p><strong>Email:</strong> ${safeEmail}</p>
             <p><strong>Phone:</strong> ${safePhone}</p>
-            <div style="margin-top:24px;padding:18px;background:#eef2ff;border-radius:10px;line-height:1.6">
+            <div style="margin-top:24px;padding:18px;background:#4169E1;color:#fff;border-radius:10px;line-height:1.6">
               ${safeMessage}
             </div>
             <p style="color:#6b7280;font-size:13px;margin-top:24px">Reply directly to this email to contact ${safeName}.</p>

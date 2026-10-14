@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 const FAQS = [
   {
     q: 'How many shops can one tenant manage?',
-    a: 'On the Starter plan, up to 10 shops. Growth allows 50, and Enterprise has no hard limits, we work with customers running 500+ locations.',
+    a: 'On the Starter plan, up to 2 shops. Growth allows 10, and Enterprise has no hard limits, we work with customers running 500+ locations.',
   },
   {
     q: 'How accurate is the haversine-based routing?',
@@ -107,7 +107,7 @@ function Modal({
             height: '32px',
             borderRadius: '50%',
             background: 'var(--badge-bg)',
-            border: '1px solid #c7d2fe',
+            border: '1px solid #4169E1',
             color: 'var(--mist)',
             fontSize: '1.2rem',
             cursor: 'pointer',
@@ -290,7 +290,7 @@ export default function FAQPage() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   background: 'var(--badge-bg)',
-                  border: '1px solid #c7d2fe',
+                  border: '1px solid #4169E1',
                   color: 'var(--pulse)',
                   fontSize: '0.85rem',
                 }}

@@ -87,7 +87,7 @@ export default async function SolutionPage({
 
   return (
     <div className="container mx-auto max-w-4xl px-4 py-16 sm:px-8">
-      <div className="mb-2 text-xs font-semibold tracking-wider text-indigo-600 uppercase">
+      <div className="mb-2 text-xs font-semibold tracking-wider text-[#4169E1] uppercase">
         Solution
       </div>
       <h1 className="mb-6 text-4xl font-bold text-gray-950">
@@ -112,9 +112,9 @@ export default async function SolutionPage({
 
       {/* Stat Block */}
       <section className="mb-12">
-        <div className="rounded-2xl bg-indigo-600 p-8 text-center text-white shadow-sm">
+        <div className="rounded-2xl bg-[#4169E1] p-8 text-center text-white shadow-sm">
           <div className="mb-2 text-6xl font-extrabold">{solution.stat}</div>
-          <div className="text-lg text-indigo-100">{solution.statLabel}</div>
+          <div className="text-lg text-white">{solution.statLabel}</div>
         </div>
       </section>
 
@@ -135,7 +135,7 @@ export default async function SolutionPage({
       <div className="text-center">
         <a
           href={`/contact?use_case=${slug}`}
-          className="inline-flex items-center rounded-lg bg-indigo-600 px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-indigo-700"
+          className="inline-flex items-center rounded-lg bg-[#4169E1] px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-[#2F4AC8]"
         >
           Request a Tailored Demo →
         </a>

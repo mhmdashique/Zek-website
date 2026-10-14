@@ -193,7 +193,7 @@ export default function DataUsagePage() {
             <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "var(--mist)", opacity: 0.45 }}>
               Last updated: August 2026
             </span>
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "var(--pulse)", border: "1px solid rgba(79,216,196,0.25)", borderRadius: "4px", padding: "2px 8px" }}>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "var(--pulse)", border: "1px solid rgba(65,105,225,0.25)", borderRadius: "4px", padding: "2px 8px" }}>
               Official Policy
             </span>
           </div>

@@ -5,18 +5,19 @@ const COLS = [
   {
     heading: 'Product',
     links: [
+      { href: '/#how-it-works', label: 'How It Works' },
+      { href: '/#product', label: 'Product' },
       { href: '/product', label: 'Features' },
       { href: '/solutions', label: 'Solutions' },
-      { href: '/integrations', label: 'Integrations' },
-      { href: '/architecture', label: 'Architecture' },
     ],
   },
   {
     heading: 'Company',
     links: [
       { href: '/about', label: 'About' },
-      { href: '/customers', label: 'Customers' },
+      { href: '/#team', label: 'Team' },
       { href: '/faq', label: 'FAQ' },
+      { href: '/demo', label: 'Contact' },
     ],
   },
   {

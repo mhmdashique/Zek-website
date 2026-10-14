@@ -54,7 +54,7 @@ export default function IntegrationsPage() {
         {integrations.map((intg) => (
           <div
             key={intg.name}
-            className="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-indigo-100"
+            className="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-[#4169E1]"
           >
             <div className="mb-3 flex items-center justify-between">
               <div>
@@ -64,7 +64,7 @@ export default function IntegrationsPage() {
                 <h3 className="text-xl font-bold text-gray-950">{intg.name}</h3>
               </div>
               {intg.badge && (
-                <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold whitespace-nowrap text-indigo-700">
+                <span className="rounded-full bg-[#4169E1] px-3 py-1 text-xs font-semibold whitespace-nowrap text-white">
                   {intg.badge}
                 </span>
               )}
@@ -82,7 +82,7 @@ export default function IntegrationsPage() {
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center rounded-lg bg-indigo-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-indigo-700"
+          className="inline-flex items-center rounded-lg bg-[#4169E1] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#2F4AC8]"
         >
           Talk to our team
         </Link>

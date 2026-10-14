@@ -111,20 +111,20 @@ export function Navbar() {
   'relative flex items-center justify-between gap-3 border pl-3 pr-2 sm:pl-4 sm:pr-2.5',
   'transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]',
   scrolled
-  ? 'rounded-2xl border-black/[0.08] bg-white/60 shadow-[0_12px_40px_-12px_rgba(15,15,20,0.25),0_2px_8px_rgba(15,15,20,0.06),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-2xl opacity-80 hover:opacity-100'
-  : 'rounded-none border-x-0 border-t-0 border-black/[0.06] bg-white/70 shadow-[0_8px_30px_-12px_rgba(15,15,20,0.18),inset_0_1px_0_rgba(255,255,255,0.8)] backdrop-blur-xl opacity-100',
+  ? 'rounded-2xl border-black/[0.08] bg-white/25 shadow-[0_12px_40px_-12px_rgba(15,15,20,0.25),0_2px_8px_rgba(15,15,20,0.06),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-2xl'
+  : 'rounded-none border-x-0 border-t-0 border-black/[0.06] bg-white/25 shadow-[0_8px_30px_-12px_rgba(15,15,20,0.18),inset_0_1px_0_rgba(255,255,255,0.8)] backdrop-blur-xl',
   ].join(' ')}
   style={{ height: scrolled ? 68 : 84 }}
           >
   {/* top highlight + scroll progress */}
   <span
   aria-hidden
-  className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent"
+  className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-[#4169E1]/50 to-transparent"
   />
   <motion.span
   aria-hidden
   style={{ scaleX: progress }}
-  className="absolute inset-x-5 bottom-[-1px] h-[2px] origin-left rounded-full bg-gradient-to-r from-indigo-500 via-violet-500 to-indigo-500 opacity-80"
+  className="absolute inset-x-5 bottom-[-1px] h-[2px] origin-left rounded-full bg-gradient-to-r from-[#4169E1] via-[#4169E1] to-[#2F4AC8] opacity-80"
   />
 
   {/* Brand */}
@@ -136,7 +136,7 @@ export function Navbar() {
   width={36}
   height={36}
   priority
-  className="h-9 w-9 rounded-[11px] object-cover shadow-[0_4px_14px_rgba(79,70,229,0.35)] ring-1 ring-black/10 transition-transform duration-300 group-hover:scale-[1.04] group-hover:rotate-[-2deg]"
+  className="h-9 w-9 rounded-[11px] object-cover shadow-[0_4px_14px_rgba(65,105,225,0.35)] ring-1 ring-black/10 transition-transform duration-300 group-hover:scale-[1.04] group-hover:rotate-[-2deg]"
             />
   <span className="absolute -bottom-0.5 -right-0.5 flex h-3 w-3 items-center justify-center rounded-full bg-white ring-1 ring-black/10">
   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
@@ -176,7 +176,7 @@ export function Navbar() {
   )}
   <span className="relative z-10 flex items-center gap-1.5 whitespace-nowrap">
                       {label}
-  {active && <span className="h-1 w-1 shrink-0 rounded-full bg-indigo-600" />}
+  {active && <span className="h-1 w-1 shrink-0 rounded-full bg-[#4169E1]" />}
                     </span>
                   </Link>
                 );
@@ -188,11 +188,11 @@ export function Navbar() {
   <div className="hidden shrink-0 items-center gap-2 lg:flex">
             <Link
               href="/demo"
-  className="group relative inline-flex items-center gap-1.5 overflow-hidden rounded-full bg-neutral-950 py-2.5 pl-5 pr-3.5 text-sm font-bold text-white shadow-[0_8px_20px_-8px_rgba(79,70,229,0.7)] transition-all duration-300 hover:shadow-[0_10px_28px_-8px_rgba(79,70,229,0.9)]"
+  className="group relative inline-flex items-center gap-1.5 overflow-hidden rounded-full bg-[#4169E1] py-2.5 pl-5 pr-3.5 text-sm font-bold text-white shadow-[0_8px_20px_-8px_rgba(65,105,225,0.8)] transition-all duration-300 hover:bg-[#3558E8] hover:shadow-[0_10px_28px_-8px_rgba(65,105,225,0.9)]"
             >
   <span
   aria-hidden
-  className="absolute inset-0 bg-gradient-to-b from-indigo-500/0 via-indigo-400/20 to-indigo-500/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+  className="absolute inset-0 bg-gradient-to-b from-[#4169E1]/0 via-[#4169E1]/20 to-[#2F4AC8]/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
   />
   <span className="relative">Request demo</span>
   <span className="relative grid h-5 w-5 place-items-center rounded-full bg-white/15 transition-transform duration-300 group-hover:translate-x-0.5">
@@ -235,7 +235,7 @@ export function Navbar() {
   scrolled ? 'mt-2' : 'mx-3 mt-2',
   ].join(' ')}
             >
-  <div className="flex items-center justify-between rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-600 to-violet-600 px-4 py-3 text-white">
+  <div className="flex items-center justify-between rounded-xl bg-gradient-to-r from-[#4169E1] via-[#2F4AC8] to-[#2F4AC8] px-4 py-3 text-white">
   <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em]">
   <span className="relative flex h-2 w-2">
   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-75" />
@@ -270,7 +270,7 @@ export function Navbar() {
               <span
   className={[
   'h-1.5 w-1.5 rounded-full transition',
-  active ? 'bg-indigo-600' : 'bg-neutral-300 group-hover:bg-neutral-400',
+  active ? 'bg-[#4169E1]' : 'bg-neutral-300 group-hover:bg-neutral-400',
   ].join(' ')}
               />
   {label}
@@ -286,7 +286,7 @@ export function Navbar() {
             <Link
               href="/demo"
               onClick={() => setMenuOpen(false)}
-  className="inline-flex items-center justify-center gap-2 rounded-xl bg-neutral-950 px-4 py-3.5 text-[15px] font-semibold text-white shadow-lg transition active:scale-[0.99]"
+  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#4169E1] px-4 py-3.5 text-[15px] font-semibold text-white shadow-[0_10px_24px_-8px_rgba(65,105,225,0.7)] transition hover:bg-[#3558E8] active:scale-[0.99]"
             >
   Request demo
   <ArrowRight className="h-4 w-4" />

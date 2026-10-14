@@ -37,7 +37,7 @@ export function SubmitSuccess({
         style={{
           background: 'var(--badge-bg)',
           border: '1px solid var(--pulse)',
-          boxShadow: '0 0 0 6px rgba(99,102,241,0.08)',
+          boxShadow: '0 0 0 6px rgba(65,105,225,0.08)',
         }}
       >
         <svg

@@ -81,7 +81,7 @@ function Card({ t }: { t: (typeof TESTIMONIALS)[0] }) {
       }}
       onMouseEnter={(e) => {
         const el = e.currentTarget as HTMLDivElement;
-        el.style.borderColor = '#c7d2fe';
+        el.style.borderColor = '#4169E1';
         el.style.background = 'var(--badge-bg)';
       }}
       onMouseLeave={(e) => {
@@ -124,7 +124,7 @@ function Card({ t }: { t: (typeof TESTIMONIALS)[0] }) {
             fontWeight: 600,
             fontSize: '0.72rem',
             background: 'var(--badge-bg)',
-            border: '1px solid #c7d2fe',
+            border: '1px solid #4169E1',
             color: 'var(--pulse)',
           }}
         >
@@ -210,18 +210,26 @@ export function Testimonials() {
       <div className="container mx-auto mb-14 max-w-6xl px-4 sm:px-8">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <p
-              className="section-kicker"
+            <span
+              className="inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 font-mono text-[11px] font-semibold"
               style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.75rem',
-                color: 'var(--pulse)',
-                letterSpacing: '0.1em',
-                marginBottom: '12px',
+                borderColor: '#4169E1',
+                background: '#4169E1',
+                color: '#ffffff',
+                letterSpacing: '0.16em',
+                marginBottom: '20px',
               }}
             >
+              <span
+                style={{
+                  width: '6px',
+                  height: '6px',
+                  borderRadius: '50%',
+                  background: '#ffffff',
+                }}
+              />
               TESTIMONIALS
-            </p>
+            </span>
             <h2
               className="section-heading"
               style={{
@@ -257,7 +265,7 @@ export function Testimonials() {
             zIndex: 1,
             pointerEvents: 'none',
             background:
-              'linear-gradient(90deg, rgba(79,70,229,0.18) 0%, transparent 8%, transparent 92%, rgba(79,70,229,0.18) 100%)',
+              'linear-gradient(90deg, rgba(65,105,225,0.18) 0%, transparent 8%, transparent 92%, rgba(65,105,225,0.18) 100%)',
           }}
         />
         <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>

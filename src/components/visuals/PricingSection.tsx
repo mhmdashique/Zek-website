@@ -17,10 +17,10 @@ const PLANS: Plan[] = [
   {
     id: 'STARTUP',
     name: 'Starter',
-    price: '₹0',
+    price: '₹4999',
     desc: 'For small teams experimenting with AI automation.',
     features: [
-      '2 AI Agents',
+      '2 shops',
       '500 Task Runs/mo',
       'Community Support',
       'Basic Analytics',
@@ -33,10 +33,10 @@ const PLANS: Plan[] = [
   {
     id: 'SCALE',
     name: 'Pro',
-    price: '₹4,999',
+    price: '₹14,999',
     desc: 'For growing businesses needing scale & reliability.',
     features: [
-      '10 AI Agents',
+      '5 Shops',
       '10k Task Runs/mo',
       'Priority Email Support',
       'Advanced Analytics',
@@ -50,10 +50,10 @@ const PLANS: Plan[] = [
   {
     id: 'ENTERPRISE',
     name: 'Business',
-    price: '₹12,999',
+    price: '₹29,999',
     desc: 'Mission-critical infrastructure for large organizations.',
     features: [
-      'Unlimited Agents',
+      'Unlimited Shops',
       '100k Task Runs/mo',
       '24/7 Dedicated Support',
       'SSO & Audit Logs',
@@ -85,9 +85,10 @@ export function PricingSection() {
     >
       <div className="container mx-auto px-4 sm:px-8 max-w-5xl">
         <div className="text-center mb-16">
-          <p className="section-kicker mb-3 font-mono text-xs" style={{ color: "var(--pulse)", letterSpacing: "0.12em" }}>
+          <span className="inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 font-mono text-[11px] font-semibold" style={{ borderColor: "#4169E1", background: "#4169E1", color: "#ffffff", letterSpacing: "0.16em", marginBottom: "20px" }}>
+            <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#ffffff" }} />
             PRICING
-          </p>
+          </span>
           <h2 className="section-heading font-display text-4xl mb-4" style={{ color: "var(--mist)" }}>
             Simple, transparent pricing
           </h2>

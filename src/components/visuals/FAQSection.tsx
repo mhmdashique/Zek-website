@@ -53,16 +53,19 @@ export function FAQSection() {
   <div className="container relative mx-auto max-w-3xl px-4 sm:px-8">
   {/* Header, same text style as upper sections */}
   <div className="mb-12 text-center">
-  <p
-  className="font-mono text-xs"
+  <span
+  className="inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 font-mono text-[11px] font-semibold"
   style={{
-  color: 'var(--pulse)',
-  letterSpacing: '0.12em',
-  marginBottom: '12px',
+  borderColor: '#4169E1',
+  background: '#4169E1',
+  color: '#ffffff',
+  letterSpacing: '0.16em',
+  marginBottom: '20px',
   }}
   >
+  <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ffffff' }} />
   FAQ
-  </p>
+  </span>
   <h2
   className="font-display"
   style={{
@@ -99,12 +102,12 @@ export function FAQSection() {
       style={{
   background: 'var(--paper)',
   border: isOpen
-  ? '1px solid rgba(79,70,229,0.4)'
+  ? '1px solid rgba(65,105,225,0.4)'
   : '1px solid var(--line)',
   borderRadius: '18px',
   overflow: 'hidden',
   boxShadow: isOpen
-  ? '0 16px 40px rgba(79,70,229,0.14)'
+  ? '0 16px 40px rgba(65,105,225,0.14)'
   : 'var(--card-shadow)',
   transition: 'all 0.25s cubic-bezier(0.4,0,0.2,1)',
   }}
@@ -133,10 +136,10 @@ export function FAQSection() {
   color: isOpen ? '#fff' : 'var(--pulse)',
   background: isOpen
   ? 'var(--pulse)'
-  : 'rgba(79,70,229,0.08)',
+  : 'rgba(65,105,225,0.08)',
   border: isOpen
   ? '1px solid var(--pulse)'
-  : '1px solid rgba(79,70,229,0.2)',
+  : '1px solid rgba(65,105,225,0.2)',
   borderRadius: '9px',
   padding: '6px 9px',
   minWidth: '36px',
@@ -172,11 +175,11 @@ export function FAQSection() {
   background: isOpen ? 'var(--pulse)' : 'transparent',
   border: isOpen
   ? '1px solid var(--pulse)'
-  : '1px solid rgba(79,70,229,0.3)',
+  : '1px solid rgba(65,105,225,0.3)',
   transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
   transition: 'all 0.25s cubic-bezier(0.4,0,0.2,1)',
   boxShadow: isOpen
-  ? '0 4px 14px rgba(79,70,229,0.4)'
+  ? '0 4px 14px rgba(65,105,225,0.4)'
   : 'none',
       }}
     >
@@ -209,7 +212,7 @@ export function FAQSection() {
           style={{
             height: '1px',
   background:
-  'linear-gradient(90deg, rgba(79,70,229,0.25), rgba(79,70,229,0.06))',
+  'linear-gradient(90deg, rgba(65,105,225,0.25), rgba(65,105,225,0.06))',
   marginBottom: '14px',
           }}
         />
@@ -242,11 +245,11 @@ export function FAQSection() {
   fontSize: '0.83rem',
   fontWeight: 600,
   color: '#fff',
-  background: 'linear-gradient(135deg, #4f46e5, #4338ca)',
+  background: 'linear-gradient(135deg, #4169E1, #2F4AC8)',
   padding: '12px 24px',
                 borderRadius: '999px',
                 textDecoration: 'none',
-  boxShadow: '0 8px 24px rgba(79,70,229,0.35)',
+  boxShadow: '0 8px 24px rgba(65,105,225,0.35)',
               }}
             >
   View all FAQs <span aria-hidden>→</span>
