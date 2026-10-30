@@ -99,7 +99,7 @@ function Card({ t }: { t: (typeof TESTIMONIALS)[0] }) {
           flex: 1,
         }}
       >
-        "{t.quote}"
+        &ldquo;{t.quote}&rdquo;
       </p>
 
       <div

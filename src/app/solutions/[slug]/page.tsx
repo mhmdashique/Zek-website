@@ -87,12 +87,12 @@ export default async function SolutionPage({
 
   return (
     <div className="container mx-auto max-w-4xl px-4 py-16 sm:px-8">
-      <div className="mb-2 text-xs font-semibold tracking-wider text-[#4169E1] uppercase">
-        Solution
-      </div>
-      <h1 className="mb-6 text-4xl font-bold text-gray-950">
-        {solution.title}
-      </h1>
+<div className="mb-2 text-xs font-semibold tracking-wider text-[#4169E1] uppercase">
+          Solution
+        </div>
+        <h1 className="mb-6 text-4xl font-bold text-gray-950">
+          <b>{solution.title}</b>
+        </h1>
 
       {/* Problem */}
       <section className="mb-12">

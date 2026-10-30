@@ -33,6 +33,28 @@
   /* Easing — mechanical, not bouncy */
   --ease-std: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
+
+  /* WhatsApp chat tokens */
+  --wa-header: #008069;
+  --wa-bg: #EFEAE2;
+  --wa-outgoing: #D9FDD3;
+  --wa-incoming: #FFFFFF;
+  --wa-text: #111B21;
+  --wa-meta: #667781;
+  --wa-text-muted: var(--wa-meta);
+  --wa-meta-outgoing: #5E7078;
+  --wa-tick-read: #53BDEB;
+  --wa-accent: #25D366;
+  --wa-input-bar: #F0F2F5;
+  --wa-notice-bg: #FFEECD;
+  --wa-chip-bg: #E7F8EE;
+  --wa-chip-text: #0F7A3D;
+  --wa-placeholder: #667781;
+  --wa-date-bg: rgba(255, 255, 255, 0.9);
+  --wa-notice-text: #54656F;
+  --wa-input-pill: #FFFFFF;
+  --wa-progress-track: rgba(17, 27, 33, 0.08);
+  --wa-wallpaper: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%237B756C' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' opacity='.055'%3E%3Cpath d='M14 22h10l6 26h26l6-18H30M36 40h30'/%3E%3Ccircle cx='34' cy='56' r='4'/%3E%3Ccircle cx='56' cy='56' r='4'/%3E%3Cpath d='M96 24h28v30H96zM102 24a8 8 0 0 1 16 0'/%3E%3Cpath d='M22 100h34l-5 24H27zM28 100l7-13 8 13'/%3E%3Cpath d='M104 108c14-18 30-16 40-10-2 16-16 26-34 20-3-1-5-4-6-10zM108 118l28-18'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* ─── Base ────────────────────────────────────────────────── */
@@ -222,6 +244,306 @@ textarea::placeholder {
   transform: translateY(-4px);
   box-shadow: 0 14px 32px rgba(65, 105, 225, 0.12);
   border-color: #4169E1;
+}
+
+.wa-chat-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--wa-bg);
+  box-shadow: var(--card-shadow);
+}
+
+/* ─── Realistic phone shell around the AI chat demo ─── */
+.wa-phone-wrap {
+  position: relative;
+  display: flex;
+  isolation: isolate;
+  justify-content: flex-end;
+  padding: 0 0 18px;
+  animation: phone-float 6s ease-in-out infinite;
+}
+
+/* Soft ground shadow so the phone feels physically placed. */
+.wa-phone-wrap::after {
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  z-index: -1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(15, 23, 42, 0.28), transparent 68%);
+  width: 74%;
+  height: 28px;
+  filter: blur(8px);
+  content: '';
+}
+
+.wa-phone-frame {
+  position: relative;
+  width: 100%;
+  max-width: 358px;
+  padding: 11px;
+  border-radius: 53px;
+  background: linear-gradient(
+    145deg,
+    #aab3c2 0%,
+    #4b5563 10%,
+    #151b26 32%,
+    #0a0f17 62%,
+    #39424f 90%,
+    #586273 100%
+  );
+  box-shadow:
+    0 42px 80px -24px rgba(15, 23, 42, 0.5),
+    0 18px 32px -12px rgba(15, 23, 42, 0.24),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.28),
+    inset 0 0 0 3px rgba(0, 0, 0, 0.55);
+}
+
+/* Side hardware buttons. */
+.wa-phone-frame::before,
+.wa-phone-frame::after {
+  position: absolute;
+  width: 3px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #6b7280 0%, #1f2937 45%, #0b1220 100%);
+  content: '';
+}
+
+/* Silent switch + volume up/down. */
+.wa-phone-frame::before {
+  top: 108px;
+  left: -3px;
+  border-radius: 3px 0 0 3px;
+  height: 26px;
+  box-shadow:
+    0 38px 0 0 #2b3441,
+    0 74px 0 0 #2b3441;
+}
+
+/* Power button. */
+.wa-phone-frame::after {
+  top: 150px;
+  right: -3px;
+  border-radius: 0 3px 3px 0;
+  height: 78px;
+}
+
+.wa-phone-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 4px solid #05070c;
+  border-radius: 43px;
+  background: var(--wa-bg);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    inset 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Glass glare across the display. */
+.wa-phone-screen::after {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  border-radius: inherit;
+  background: linear-gradient(
+    118deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.06) 16%,
+    rgba(255, 255, 255, 0) 34%,
+    rgba(255, 255, 255, 0) 72%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  pointer-events: none;
+  content: '';
+}
+
+.wa-phone-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  height: 38px;
+  padding: 0 24px;
+  background: var(--wa-header);
+  color: #ffffff;
+  font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.wa-phone-status-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #ffffff;
+}
+
+.wa-phone-status-icons svg {
+  display: block;
+}
+
+.wa-phone-battery {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1.4px solid rgba(255, 255, 255, 0.92);
+  border-radius: 3.5px;
+  width: 24px;
+  height: 12px;
+  padding: 1.4px;
+}
+
+.wa-phone-battery::after {
+  position: absolute;
+  top: 50%;
+  right: -4px;
+  transform: translateY(-50%);
+  border-radius: 0 2px 2px 0;
+  background: rgba(255, 255, 255, 0.7);
+  width: 2px;
+  height: 5px;
+  content: '';
+}
+
+.wa-phone-battery-level {
+  display: block;
+  border-radius: 1.5px;
+  background: #ffffff;
+  width: 76%;
+  height: 100%;
+}
+
+.wa-phone-island {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  z-index: 6;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 30%, #1b2430 0%, #05070b 55%, #000000 100%);
+  width: 94px;
+  height: 27px;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.65),
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.1);
+}
+
+/* Camera lens inside the Dynamic Island. */
+.wa-phone-island::after {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 32%, #2f4a78 0%, #0a1220 42%, #01040a 70%);
+  width: 10px;
+  height: 10px;
+  box-shadow:
+    0 0 0 1px #05070b,
+    inset 0 0 2px rgba(120, 170, 255, 0.55);
+  content: '';
+}
+
+.wa-phone-home {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  height: 20px;
+  background: var(--wa-input-bar);
+}
+
+.wa-phone-home::after {
+  width: 118px;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(17, 27, 33, 0.55);
+  content: '';
+}
+
+.wa-phone-screen .wa-chat-card {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.wa-added-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  width: 21px;
+  height: 21px;
+  margin-left: 6px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #16a34a;
+  color: #ffffff;
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(22, 163, 74, 0.35);
+}
+
+.wa-added-check:disabled {
+  opacity: 1;
+}
+
+.wa-chat-body {
+  background-color: var(--wa-bg);
+  background-image: var(--wa-wallpaper);
+  background-repeat: repeat;
+}
+
+.wa-bubble-outgoing,
+.wa-bubble-incoming {
+  position: relative;
+}
+
+.wa-bubble-incoming {
+  box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
+}
+
+.wa-bubble-outgoing::before,
+.wa-bubble-incoming::before {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  content: '';
+  pointer-events: none;
+}
+
+.wa-bubble-outgoing::before {
+  right: -8px;
+  border-top: 8px solid var(--wa-outgoing);
+  border-right: 8px solid transparent;
+}
+
+.wa-bubble-incoming::before {
+  left: -8px;
+  border-top: 8px solid var(--wa-incoming);
+  border-left: 8px solid transparent;
+}
+
+@media (max-width: 360px) {
+  .wa-header-video {
+    display: none;
+  }
+
+  .wa-chat-title,
+  .wa-chat-status {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .wa-header-actions {
+    gap: 8px !important;
+  }
 }
 
 .team-card {
@@ -955,6 +1277,9 @@ section h2 + p {
   .enter-up {
     transform: none;
     opacity: 1;
+    animation: none;
+  }
+  .wa-phone-wrap {
     animation: none;
   }
   .section-kicker,

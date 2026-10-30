@@ -81,7 +81,7 @@ const SECTIONS: Section[] = [
     body: (
       <p>
         Customer and order data is stored on secure servers used by Zekvian
-        Technologies and the merchant's order management system. Data is
+        Technologies and the merchant&apos;s order management system. Data is
         processed in accordance with applicable Indian data protection
         requirements. Access is restricted to authorised personnel involved in
         order fulfilment and platform operations.

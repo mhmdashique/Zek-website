@@ -136,7 +136,7 @@ export default function TermsPage() {
       {/* Intro */}
       <div style={{ maxWidth: "800px", margin: "0 auto", padding: "48px 32px 0" }}>
         <p style={{ fontSize: "0.9375rem", color: "var(--mist)", opacity: 0.65, lineHeight: 1.8, marginBottom: "8px" }}>
-          These Terms &amp; Conditions ("Terms") govern your use of the WhatsApp-based ordering service (the "Service") offered by the merchant, enabling you ("you", "customer") to order groceries and supermarket products for home delivery or in-store pickup by chatting with our WhatsApp bot. By placing an order through the Service, you agree to these Terms.
+          These Terms &amp; Conditions (&ldquo;Terms&rdquo;) govern your use of the WhatsApp-based ordering service (the &ldquo;Service&rdquo;) offered by the merchant, enabling you (&ldquo;you&rdquo;, &ldquo;customer&rdquo;) to order groceries and supermarket products for home delivery or in-store pickup by chatting with our WhatsApp bot. By placing an order through the Service, you agree to these Terms.
         </p>
 
         {/* Powered by Zekvian */}
@@ -149,7 +149,7 @@ export default function TermsPage() {
         }}>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "var(--pulse)", marginBottom: "8px", letterSpacing: "0.04em" }}>PLATFORM ROLE</p>
           <p style={{ fontSize: "0.875rem", color: "var(--mist)", opacity: 0.65, lineHeight: 1.7 }}>
-            The Service is powered by Zekvian Technologies' order-management platform. Zekvian provides only the underlying messaging technology; all products sold, prices charged, and orders fulfilled through the Service are sold by, and are the sole responsibility of, the merchant.
+            The Service is powered by Zekvian Technologies&apos; order-management platform. Zekvian provides only the underlying messaging technology; all products sold, prices charged, and orders fulfilled through the Service are sold by, and are the sole responsibility of, the merchant.
           </p>
         </div>
       </div>

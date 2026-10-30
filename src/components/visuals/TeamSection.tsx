@@ -1,10 +1,11 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const TEAM = [
   {
     id: 'LOKI',
-    name: 'Loki Laufeyson',
+    name: 'Farzan Shibu',
     initials: 'LL',
     role: 'Operations',
     bio: '10 years in retail ops and supply chain. Previously led fulfillment at a 200-store chain.',
@@ -12,23 +13,23 @@ const TEAM = [
   },
   {
     id: 'SPIDER',
-    name: 'Spider Man',
+    name: 'Abhishek RM',
     initials: 'SM',
-    role: 'Engineering',
-    bio: 'Built distributed systems at scale. Obsessed with sub-50ms allocation latency.',
+    role: 'Product',
+    bio: 'Former ops manager turned product builder. Designed the N8n automation layer.',
     image: '/spiderman.jpg',
   },
   {
     id: 'SUPER',
-    name: 'Super Man',
+    name: 'Mohammed Ashique S',
     initials: 'SM',
-    role: 'Product',
-    bio: 'Former ops manager turned product builder. Designed the N8n automation layer.',
+    role: 'Engineering',
+    bio: 'Built distributed systems at scale. Obsessed with sub-50ms allocation latency.',
     image: '/superman.jpg',
   },
   {
     id: 'BAT',
-    name: 'Bat Man',
+    name: 'Muhammed Abdul Hadi',
     initials: 'BM',
     role: 'Customer Success',
     bio: 'Onboarded 40+ retail tenants. Avg setup time under 10 days on his watch.',
@@ -77,11 +78,13 @@ function TeamCard({ member, index, active, onEnter, onLeave }: {
       {/* photo */}
       <div className="relative w-full overflow-hidden" style={{ height: '260px', background: '#F8FAFF' }}>
         {imgOk ? (
-          <img
+          <Image
             src={member.image}
             alt={member.name}
+            fill
+            sizes="(max-width: 768px) 100vw, 25vw"
             onError={() => setImgOk(false)}
-            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+            style={{ objectFit: 'cover', objectPosition: 'center top' }}
           />
         ) : (
           <div

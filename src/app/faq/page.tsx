@@ -206,7 +206,7 @@ export default function FAQPage() {
               opacity: 0.75,
             }}
           >
-            Can't find the answer?{' '}
+            Can&apos;t find the answer?{' '}
             <a
               href="mailto:official.zekvian@gmail.com"
               style={{

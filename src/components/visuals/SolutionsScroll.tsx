@@ -69,10 +69,7 @@ export function ScrollSplitSection({
   }, []);
 
   useEffect(() => {
-    if (reduceMotion) {
-      setVisible(items.map(() => true));
-      return;
-    }
+    if (reduceMotion) return;
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -193,7 +190,7 @@ export function ScrollSplitSection({
               >
                 <span
                   className="h-1.5 w-1.5 rounded-full"
-                  style={{ background: '#4169E1' }}
+                  style={{ background: '#ffffff' }}
                 />
                 {kicker}
               </span>
@@ -255,7 +252,7 @@ export function ScrollSplitSection({
                   <div className="flex-1">
                     <div className="flex items-center justify-between gap-3">
                       <h3 className="text-[15.5px] font-bold tracking-tight text-neutral-950">
-                        {s.title}
+                        <b>{s.title}</b>
                       </h3>
                       {showIndex && (
                         <span className="font-mono text-[11px] text-neutral-300">

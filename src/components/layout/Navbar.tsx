@@ -35,7 +35,6 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-  if (window.innerWidth >= 1024) setMenuOpen(false);
   const onResize = () => {
       if (window.innerWidth >= 1024) setMenuOpen(false);
     };
@@ -51,7 +50,6 @@ export function Navbar() {
   }, [menuOpen]);
 
   useEffect(() => {
-    setActiveSection(null);
     const ids = NAV_LINKS.map((l) => l.section).filter(Boolean) as string[];
     const observer = new IntersectionObserver(
       (entries) => {
@@ -62,6 +60,7 @@ export function Navbar() {
   { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
     );
     const raf = requestAnimationFrame(() => {
+      setActiveSection(null);
       ids.forEach((id) => {
         const el = document.getElementById(id);
         if (el) observer.observe(el);

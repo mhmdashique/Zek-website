@@ -142,8 +142,8 @@ const SECTIONS: Section[] = [
     title: "Third-Party Services",
     body: (
       <p>
-        Your use of WhatsApp is subject to Meta Platforms' own terms of service
-        and privacy policy. We encourage you to review WhatsApp's privacy
+        Your use of WhatsApp is subject to Meta Platforms&apos; own terms of service
+        and privacy policy. We encourage you to review WhatsApp&apos;s privacy
         practices. Zekvian acts as a technology processor; the merchant remains
         responsible for product sales and customer-facing fulfilment.
       </p>

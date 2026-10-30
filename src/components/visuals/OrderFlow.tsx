@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef } from "react";
 
 interface Props {
   /** 0 to 1 scroll-scrubbed progress. Omit for hero auto-play mode. */
@@ -98,45 +98,11 @@ function renderFrame(
 
 export function OrderFlow({ progress, className = "" }: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
-  const rafRef = useRef<number>(0);
   const stateRef = useRef({
     phase: "intro" as "intro" | "ambient",
     startTime: 0,
     dots: [] as { t: number; shopIdx: number; born: number }[],
   });
-
-  const draw = useCallback((now: number) => {
-    const svg = svgRef.current;
-    if (!svg) return;
-    const state = stateRef.current;
-    const STAGGER = 150, DOT_DUR = 1800, INTRO_COUNT = 3, AMBIENT_INTERVAL = 4000;
-
-    if (state.phase === "intro") {
-      const elapsed = now - state.startTime;
-      const expected = Math.floor(elapsed / STAGGER);
-      while (state.dots.length < Math.min(expected + 1, INTRO_COUNT)) {
-        state.dots.push({ t: 0, shopIdx: state.dots.length % SHOPS.length, born: now });
-      }
-    } else {
-      const last = state.dots[state.dots.length - 1];
-      if (!last || now - last.born > AMBIENT_INTERVAL) {
-        state.dots.push({ t: 0, shopIdx: Math.floor(Math.random() * SHOPS.length), born: now });
-      }
-    }
-
-    state.dots.forEach(d => { d.t = Math.min((now - d.born) / DOT_DUR, 1); });
-
-    if (state.phase === "intro") {
-      const done = state.dots.length >= INTRO_COUNT && state.dots.every(d => d.t >= 1);
-      if (done) { state.phase = "ambient"; state.dots = []; }
-    } else {
-      // Prune old resolved dots in ambient
-      state.dots = state.dots.filter(d => d.t < 1 || now - d.born < DOT_DUR + 1500);
-    }
-
-    renderFrame(svg, state.dots);
-    rafRef.current = requestAnimationFrame(draw);
-  }, []);
 
   // Scroll-scrubbed mode
   useEffect(() => {
@@ -151,14 +117,46 @@ export function OrderFlow({ progress, className = "" }: Props) {
   // Auto-play mode
   useEffect(() => {
     if (progress !== undefined) return;
-    stateRef.current = { phase: "intro", startTime: performance.now(), dots: [] };
-    rafRef.current = requestAnimationFrame(draw);
-    return () => cancelAnimationFrame(rafRef.current);
-  }, [draw, progress]);
+    const svg = svgRef.current;
+    if (!svg) return;
+    stateRef.current = { phase: 'intro', startTime: performance.now(), dots: [] };
+    let raf = 0;
+    const draw = (now: number) => {
+      const state = stateRef.current;
+      const STAGGER = 150, DOT_DUR = 1800, INTRO_COUNT = 3, AMBIENT_INTERVAL = 4000;
+
+      if (state.phase === 'intro') {
+        const elapsed = now - state.startTime;
+        const expected = Math.floor(elapsed / STAGGER);
+        while (state.dots.length < Math.min(expected + 1, INTRO_COUNT)) {
+          state.dots.push({ t: 0, shopIdx: state.dots.length % SHOPS.length, born: now });
+        }
+      } else {
+        const last = state.dots[state.dots.length - 1];
+        if (!last || now - last.born > AMBIENT_INTERVAL) {
+          state.dots.push({ t: 0, shopIdx: Math.floor(Math.random() * SHOPS.length), born: now });
+        }
+      }
+
+      state.dots.forEach(d => { d.t = Math.min((now - d.born) / DOT_DUR, 1); });
+
+      if (state.phase === 'intro') {
+        const done = state.dots.length >= INTRO_COUNT && state.dots.every(d => d.t >= 1);
+        if (done) { state.phase = 'ambient'; state.dots = []; }
+      } else {
+        state.dots = state.dots.filter(d => d.t < 1 || now - d.born < DOT_DUR + 1500);
+      }
+
+      renderFrame(svg, state.dots);
+      raf = requestAnimationFrame(draw);
+    };
+    raf = requestAnimationFrame(draw);
+    return () => cancelAnimationFrame(raf);
+  }, [progress]);
 
   return (
     <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} className={className}
-      aria-hidden="true" style={{ overflow: "visible" }}>
+      aria-hidden="true" style={{ overflow: 'visible' }}>
       <defs>
         <filter id="pulse-glow" x="-60%" y="-60%" width="220%" height="220%">
           <feGaussianBlur stdDeviation="3" result="blur" />

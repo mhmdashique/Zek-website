@@ -18,7 +18,7 @@ function Kicker({ children }: { children: ReactNode }) {
     <span className="inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 font-mono text-[11px] font-semibold tracking-[0.16em]"
       style={{ borderColor: '#4169E1', background: '#4169E1', color: '#ffffff' }}
     >
-      <span className="h-1.5 w-1.5 rounded-full" style={{ background: '#4169E1' }} />
+      <span className="h-1.5 w-1.5 rounded-full" style={{ background: '#ffffff' }} />
       {children}
     </span>
   );
@@ -67,7 +67,7 @@ export default function SolutionsPage() {
           </Link>
           <Kicker>SOLUTIONS · 7 CAPABILITIES LIVE</Kicker>
           <h1 className="font-display mt-5 max-w-3xl text-4xl text-neutral-950 sm:text-5xl" style={{ letterSpacing: '-0.03em', lineHeight: 1.08 }}>
-            What Zekvian does, <span className="text-[#4169E1]">available now</span>
+            What Zekvian does, <br /><span className="text-[#4169E1]">available now</span>
           </h1>
           <p className="mt-4 max-w-xl text-[16.5px] leading-relaxed text-neutral-600">
             Seven production-ready capabilities that transform a traditional supermarket into a fully automated, WhatsApp-native retail operation.

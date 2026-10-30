@@ -84,7 +84,7 @@ export default function SecurityPage() {
             Security at Zekvian
           </h1>
           <p style={{ fontSize: "1rem", color: "var(--mist)", opacity: 0.6, lineHeight: 1.75, maxWidth: "560px" }}>
-            We trace requests across other people's systems for a living, so protecting the data that moves through ours isn't a checkbox, it's built into how the platform runs, end to end.
+            We trace requests across other people&apos;s systems for a living, so protecting the data that moves through ours isn&apos;t a checkbox, it&apos;s built into how the platform runs, end to end.
           </p>
         </div>
       </div>
