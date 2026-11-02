@@ -90,7 +90,7 @@ export function HeroSection() {
                 transition: 'all 0.5s cubic-bezier(0,0,0.2,1)',
               }}
             >
-              <span className="inline-flex items-center gap-1 rounded-full bg-neutral-950 px-2.5 py-1 text-[11px] font-semibold text-white">
+              <span className="inline-flex items-center gap-1 rounded-full bg-[#4169E1] px-2.5 py-1 text-[11px] font-semibold text-white">
                 <Zap className="h-3 w-3" /> New
               </span>
               WhatsApp is now your smart storefront

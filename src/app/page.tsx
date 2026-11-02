@@ -75,7 +75,6 @@ export default function Home() {
               </h2>
               <p className="mt-4 max-w-xl text-[16.5px] leading-relaxed text-neutral-600">
                 Connects to your live catalog, inventory and payments — whatever platform you run on.
-                &ldquo;2 kg rice, a dozen eggs and some milk&rdquo; becomes a paid order with no human in the loop.
               </p>
             </div>
             <Link href="/product" className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-[#4169E1] bg-[#F8FAFF] px-5 py-3 text-sm font-semibold text-[#4169E1] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">

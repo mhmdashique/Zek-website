@@ -1,14 +1,19 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import {
+  playWhatsAppNotification,
+  unlockNotificationSound,
+} from "@/lib/notification-sound";
 
 const STEPS = [
   {
     n: '01',
     title: 'Greetings & Onboarding',
-    tag: 'whatsapp.receive',
+    tag: 'onboarding',
     body: 'No app to download, no account to create, no new interface to learn. The shopper simply opens WhatsApp and says hi. Zekvian greets returning customers, remembers how they shop, and invites them to share their list in whatever way feels natural.',
-    customer: 'Hi! My name is John',
+    customer: 'Hi!\n My name is John',
     bot: 'Nice to meet you, John! 👋\nWhat can I get for you today?\nSend a list, a photo, or a voice note.',
     progress: 30,
     tone: 'yellow',
@@ -19,7 +24,7 @@ const STEPS = [
     tag: "whatsapp.receive",
     body: "The shopper sends their grocery list exactly how it feels natural: a quick text message, a voice note, or a snapshot of a handwritten note. Zekvian reads the list directly, making adoption frictionless for customers who already use WhatsApp every day.",
     messages: [
-      { from: "customer", text: "Milk 1L, eggs x 10, dettol 500ml, Fortune Sunflower Oil 1L" },
+      { from: "customer", text: "Milk 1L,\n eggs x 10,\n dettol 500ml,\n Fortune Sunflower Oil 1L" },
       { from: "bot", text: "Got it! Parsing your list now... \u23F3" },
     ],
     progress: 60,
@@ -43,8 +48,8 @@ const STEPS = [
     tag: "order.complete",
     body: "Once the list is finalized, the customer sees a full order preview with itemised prices and the total in the same conversation. A single approval places the order, an order ID is generated instantly, and the invoice follows automatically, no app hopping, no line waiting, no paper receipts.",
     messages: [
-      { from: "customer", text: "Yes, add Coconut Oil. Confirm order \u2713" },
-      { from: "bot", text: "✅ Order placed! 🎉\n🧾 Order ID: ORD-2026-00007\n\nMilk 1L \u00D7 1 — ₹62.00\nEggs \u00D7 10 \u00D7 1 — ₹70.00\nDettol 500ml \u00D7 1 — ₹95.00\nKera Coconut Oil 1L \u00D7 1 — ₹342.00\nTotal — ₹569.00\n\n💵 Pay ₹569.00 on delivery." },
+      { from: "customer", text: "Yes, add . Confirm order \u2713" },
+      { from: "bot", text: "✅ Order placed! 🎉\n🧾 Order ID: ORD-2026-00007\n\nMilk 1L \u00D7 1 — ₹62.00\nEggs \u00D7 10 \u00D7 1 — ₹70.00\nDettol 500ml \u00D7 1 — ₹95.00\nKera Coconut Oil 1L \u00D7 1 — ₹342.00\nTotal — ₹569.00\n\n💵 Pay ₹569.00 on delivery.\n\n 📞 Our delivery partner will call you once we start! 😊" },
     ],
     progress: 100,
     tone: "green",
@@ -52,6 +57,7 @@ const STEPS = [
 ] as const;
 
 const STAGE_SUBTITLE: Record<string, string> = {
+  "onboarding": "onboarding\u2026",
   "whatsapp.receive": "receiving your list\u2026",
   "ai.substituting": "finding substitutes\u2026",
   "order.complete": "order complete",
@@ -63,8 +69,6 @@ const STAGE_TIMES: Record<string, { user: string; bot: string }> = {
   "03": { user: "10:42", bot: "10:43" },
   "04": { user: "10:43", bot: "10:44" },
 };
-
-const STEP_DURATION = 4000;
 
 const FONT_STACK = '-apple-system, "Segoe UI", Helvetica, Arial, sans-serif';
 
@@ -123,13 +127,18 @@ function ChatBubble({
 
   useEffect(() => {
     if (reduceMotion) return;
+    // Shopper sends the message, then the bot replies — each with a chime.
+    const t0 = setTimeout(() => playWhatsAppNotification(), 80);
     const t1 = setTimeout(() => setTicksBlue(true), 600);
     const t2 = setTimeout(() => setPhase(1), 800);
     const t3 = setTimeout(() => setPhase(2), 1500);
+    const t4 = setTimeout(() => playWhatsAppNotification(), 1580);
     return () => {
+      clearTimeout(t0);
       clearTimeout(t1);
       clearTimeout(t2);
       clearTimeout(t3);
+      clearTimeout(t4);
     };
   }, [step.tag, reduceMotion]);
   const _step = step as unknown as { messages?: readonly { from: string; text: string }[]; customer?: string; bot?: string };
@@ -354,11 +363,21 @@ function ChatBubble({
                   placeItems: "center",
                   flexShrink: 0,
                   marginLeft: "2px",
+                  overflow: "hidden",
                 }}
               >
-                <Icon size={20}>
-                  <path d="M8 7.5h8.5L8 16.5h8.5" strokeWidth={2.2} />
-                </Icon>
+                <Image
+                  src="/Zekvian%20Z.jpeg"
+                  alt="Zekvian"
+                  width={34}
+                  height={34}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    display: "block",
+                  }}
+                />
               </div>
               <div style={{ minWidth: 0, flex: 1, marginLeft: "8px" }}>
                 <div
@@ -707,19 +726,8 @@ export function HowItWorks() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
-  const [manualPaused, setManualPaused] = useState(false);
-  const [hovered, setHovered] = useState(false);
-  const [focused, setFocused] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const [inView, setInView] = useState(true);
-  const envPaused = hovered || focused || hidden || !inView;
-  const [autoProgress, setAutoProgress] = useState(0);
   const [replayKey, setReplayKey] = useState(0);
   const stepRefs = useRef<Array<HTMLDivElement | null>>([]);
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const progressRef = useRef(0);
-  const lastTickRef = useRef(0);
-  const rafRef = useRef<number | null>(null);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -729,8 +737,15 @@ export function HowItWorks() {
     return () => media.removeEventListener?.("change", updateReduceMotion);
   }, []);
 
+  // Browsers only allow audio after a user gesture — unlock the chime once.
   useEffect(() => {
-    lastTickRef.current = performance.now();
+    const unlock = () => unlockNotificationSound();
+    window.addEventListener("pointerdown", unlock, { once: true });
+    window.addEventListener("keydown", unlock, { once: true });
+    return () => {
+      window.removeEventListener("pointerdown", unlock);
+      window.removeEventListener("keydown", unlock);
+    };
   }, []);
 
   useEffect(() => {
@@ -740,64 +755,10 @@ export function HowItWorks() {
     return () => window.removeEventListener("resize", updateViewport);
   }, []);
 
-  useEffect(() => {
-    const handler = () => setHidden(document.visibilityState !== "visible");
-    handler();
-    document.addEventListener("visibilitychange", handler);
-    return () => document.removeEventListener("visibilitychange", handler);
-  }, []);
-
-  useEffect(() => {
-    const node = sectionRef.current;
-    if (!node) return;
-    const io = new IntersectionObserver(
-      ([entry]) => setInView(entry.isIntersecting),
-      { threshold: 0.3 },
-    );
-    io.observe(node);
-    return () => io.disconnect();
-  }, []);
-
-  const autoplayEnabled = !reduceMotion && !manualPaused && !envPaused;
-
-  useEffect(() => {
-    if (!autoplayEnabled) {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      rafRef.current = null;
-      return;
-    }
-    lastTickRef.current = performance.now();
-    const tick = (now: number) => {
-      const delta = (now - lastTickRef.current) / STEP_DURATION;
-      lastTickRef.current = now;
-      const next = progressRef.current + delta;
-      if (next >= 1) {
-        progressRef.current = 0;
-        setAutoProgress(0);
-        setActiveIdx((prev) => (prev + 1) % STEPS.length);
-        setReplayKey((k) => k + 1);
-        lastTickRef.current = now;
-      } else {
-        progressRef.current = next;
-        setAutoProgress(next);
-      }
-      rafRef.current = requestAnimationFrame(tick);
-    };
-    rafRef.current = requestAnimationFrame(tick);
-    return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      rafRef.current = null;
-    };
-  }, [autoplayEnabled, activeIdx, replayKey]);
-
   const goToStep = (index: number) => {
     if (index === activeIdx) {
       setReplayKey((k) => k + 1);
-      progressRef.current = 0;
-      setAutoProgress(0);
     } else {
-      progressRef.current = 0;
-      setAutoProgress(0);
       setActiveIdx(index);
     }
   };
@@ -821,14 +782,7 @@ export function HowItWorks() {
       `}</style>
 
       <section
-        ref={sectionRef}
         id="how-it-works"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        onFocusCapture={() => setFocused(true)}
-        onBlurCapture={(e) => {
-          if (!e.currentTarget.contains(e.relatedTarget as Node)) setFocused(false);
-        }}
         style={{
           borderTop: "1px solid var(--line)",
           background: "var(--void)",
@@ -862,26 +816,6 @@ export function HowItWorks() {
           <div className="sr-only" aria-live="polite" aria-atomic="true">
             Step {activeIdx + 1} of {STEPS.length}: {STEPS[activeIdx].title}
           </div>
-
-          <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "12px" }}>
-            <button
-              type="button"
-              onClick={() => setManualPaused((p) => !p)}
-              aria-label={manualPaused ? "Play autoplay" : "Pause autoplay"}
-              style={{
-                border: "1px solid var(--line)",
-                background: "var(--paper)",
-                color: "var(--mist)",
-                borderRadius: "999px",
-                padding: "6px 14px",
-                fontSize: "0.75rem",
-                cursor: "pointer",
-              }}
-            >
-              {manualPaused ? "Play" : "Pause"}
-            </button>
-          </div>
-
           <div
             style={{
               display: "grid",
@@ -891,36 +825,6 @@ export function HowItWorks() {
             }}
           >
             <div>
-              <div
-                style={{
-                  display: "flex",
-                  gap: "6px",
-                  marginBottom: "20px",
-                  paddingRight: isMobile ? "0" : "16px",
-                }}
-              >
-                {STEPS.map((step, index) => {
-                  const filled = index <= activeIdx;
-                  return (
-                    <div
-                      key={step.n}
-                      style={{
-                        flex: 1,
-                        height: "3px",
-                        borderRadius: "999px",
-                        background: filled ? "var(--pulse)" : "#d1d5db",
-                        transform: filled ? "scaleX(1)" : "scaleX(0.96)",
-                        transformOrigin: "left center",
-                        transition: reduceMotion
-                          ? "none"
-                          : "background 0.35s ease, transform 0.35s ease",
-                        opacity: filled ? 1 : 0.75,
-                      }}
-                    />
-                  );
-                })}
-              </div>
-
               <div style={{ display: "grid", gap: "12px" }} role="tablist" aria-label="How it works steps">
                 {STEPS.map((step, index) => {
                   const isActive = index === activeIdx;
@@ -1003,27 +907,6 @@ export function HowItWorks() {
                       >
                         {step.body}
                       </div>
-                      {!reduceMotion && isActive && (
-                        <div
-                          style={{
-                            position: "absolute",
-                            left: 0,
-                            right: 0,
-                            bottom: 0,
-                            height: "3px",
-                            background: "rgba(0,0,0,0.06)",
-                            overflow: "hidden",
-                          }}
-                        >
-                          <div
-                            style={{
-                              width: `${autoProgress * 100}%`,
-                              height: "100%",
-                              background: toneBorder,
-                            }}
-                          />
-                        </div>
-                      )}
                     </div>
                   );
                 })}
@@ -1037,14 +920,62 @@ export function HowItWorks() {
                 zIndex: 10,
                 width: "100%",
                 display: "flex",
+                alignItems: "center",
                 justifyContent: "flex-end",
+                gap: "12px",
               }}
             >
+              <button
+                type="button"
+                className="hiw-nav-btn hiw-nav-side"
+                onClick={() => setActiveIdx((i) => Math.max(0, i - 1))}
+                disabled={activeIdx === 0}
+                aria-label="Previous step"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M15 5l-7 7 7 7" />
+                </svg>
+              </button>
+
               <ChatBubble
                 key={`${STEPS[activeIdx].tag}-${replayKey}-${reduceMotion}`}
                 step={STEPS[activeIdx]}
                 reduceMotion={reduceMotion}
               />
+
+              <button
+                type="button"
+                className="hiw-nav-btn hiw-nav-side"
+                onClick={() =>
+                  setActiveIdx((i) => Math.min(STEPS.length - 1, i + 1))
+                }
+                disabled={activeIdx === STEPS.length - 1}
+                aria-label="Next step"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>

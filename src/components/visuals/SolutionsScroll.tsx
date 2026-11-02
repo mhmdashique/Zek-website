@@ -166,7 +166,7 @@ export function ScrollSplitSection({
         />
       </div>
       <div className="relative site-container">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           {/* Left — sticky + scrolls downward with the page */}
           <div className="lg:sticky lg:top-28 lg:self-start">
             <div

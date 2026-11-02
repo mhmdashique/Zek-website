@@ -62,7 +62,7 @@ export default function SolutionsPage() {
           <div className="absolute -top-40 left-1/2 h-[420px] w-[820px] -translate-x-1/2 rounded-full blur-3xl" style={{ background: 'radial-gradient(ellipse, rgba(65,105,225,0.20), rgba(65,105,225,0.08), transparent 70%)' }} />
         </div>
         <div className="relative site-container">
-          <Link href="/" className="mb-6 inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-[#4169E1]">
+          <Link href="/" className="mb-6 flex w-fit items-center gap-1.5 text-sm font-semibold text-neutral-500 transition hover:text-[#4169E1]">
             <ArrowLeft className="h-4 w-4" /> Back to home
           </Link>
           <Kicker>SOLUTIONS · 7 CAPABILITIES LIVE</Kicker>
@@ -132,12 +132,12 @@ export default function SolutionsPage() {
               <div key={pain} className="grid grid-cols-1 items-stretch gap-3 md:grid-cols-[1fr_auto_1fr]">
                 <div className="flex items-center gap-3 rounded-2xl px-5 py-4" style={{ border: '1px solid #fecdd3', background: '#fff1f2' }}>
                   <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-[13px] font-bold text-white" style={{ background: '#ef4444' }}>✕</span>
-                  <p className="text-[14.5px] leading-relaxed" style={{ color: '#991b1b' }}>{pain}</p>
+                  <p className="font-sans text-[14.5px] leading-relaxed" style={{ color: '#991b1b' }}>{pain}</p>
                 </div>
                 <div aria-hidden className="hidden self-center font-bold text-[#4169E1] md:block">→</div>
                 <div className="flex items-center gap-3 rounded-2xl px-5 py-4" style={{ border: '1px solid #a7f3d0', background: '#ecfdf5' }}>
                   <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-[13px] font-bold text-white" style={{ background: '#16a34a' }}>✓</span>
-                  <p className="text-[14.5px] leading-relaxed font-semibold" style={{ color: '#166534' }}>{fix}</p>
+                  <p className="font-sans text-[14.5px] leading-relaxed font-semibold" style={{ color: '#166534' }}>{fix}</p>
                 </div>
               </div>
             ))}
